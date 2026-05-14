@@ -1,0 +1,31 @@
+{
+  "mode": "local",
+  "defaultModel": "ollama/gemma4:e2b",
+  "gateway": {
+    "bind": "loopback",
+    "remoteUrl": null,
+    "auth": {
+      "mode": "none"
+    },
+    "controlUi": {
+      "allowInsecureAuth": true
+    },
+    "cliBackend": {
+      "logs": false,
+      "autoUpdate": false
+    },
+    "wsLog": {
+      "style": "compact"
+    }
+  },
+  "heartbeat": {
+    "enabled": true,
+    "everyMs": 1800000,
+    "prompt": "Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK."
+  },
+  "model": {
+    "timeoutSeconds": 120,
+    "retryAttempts": 10,
+    "retryDelayMs": 10000
+  }
+}

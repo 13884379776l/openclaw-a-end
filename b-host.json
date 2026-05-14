@@ -1,0 +1,2 @@
+{"model":"mistral-small:24b","prompt":"Use the run_cmd tool to execute: cat /etc/hostname","stream":false,"tools":[{"type":"function","function":{"name":"run_cmd","description":"Run a shell command and return output","parameters":{"type":"object","properties":{"cmd":{"type":"string","description":"The command to run"}},"required":["cmd"]}}}]
+}

@@ -1,0 +1,19 @@
+{
+  "models": {
+    "ollama/qwen3.5:latest": {
+      "baseUrl": "http://192.168.31.57:11434",
+      "api": "ollama"
+    },
+    "qwen3.5:0.8b": {
+      "baseUrl": "http://192.168.31.57:11434",
+      "api": "ollama"
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "ollama/qwen3.5:latest"
+      }
+    }
+  }
+}

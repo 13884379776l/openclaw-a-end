@@ -1,0 +1,84 @@
+# 运行时数据
+.ollama/
+.openclaw/
+node_modules/
+dist/
+skills/
+openclaw-a2a-gateway/
+
+# 安装包
+ollama-v*.tar*
+ollama-v2.tgz
+ollama-latest
+
+# 二进制
+*.exe
+*.exe.bak
+
+# 临时文件
+temp_*.json
+temp-*.json
+temp_*.json5
+temp-*.json5
+tmp_*.js
+tmp_*.json
+
+# 测试脚本
+*.py
+*_test.js
+*_test.json
+test-*.py
+check-*.py
+b-*.py
+kill-*.py
+ping-*.py
+ask-*.py
+cron-*.py
+diag-*.py
+verify-*.py
+restart-*.py
+revert-*.py
+fix-*.py
+inspect-*.py
+v100-*.json
+gpu-fan-power.py
+fan-curve.py
+nv-fan.py
+check-chinese-im.py
+
+# 散落的测试 JSON（根目录）
+a2a-*.json
+b2a-*.json
+ollama-*.json
+ps.json
+tags.json
+manifest.json
+temp_payload.json
+temp_warmup.json
+
+# 临时日志/数据
+temp_opencli_install.log
+_warmup.json
+- w
+package-lock.json
+package.json
+node_modules/
+ubuntu/
+win/
+selector/
+icons/
+
+# 运行时状态
+memory/.dreams/
+memory/heartbeat-state.json
+
+# 批处理/文本
+批处理*.bat
+批处理*.txt
+top_stats_table.md
+访问*.bat
+访问*.txt
+
+# 杂项
+dy
+-w

@@ -74,9 +74,11 @@
 
 1. **`CUDA_VISIBLE_DEVICES` 对 Ollama 无效** — Ollama 内部有自己的 GPU 发现逻辑，会覆盖系统环境变量中的 GPU 序号
 2. **唯一可靠方式：NVIDIA UUID** — 通过 `nvidia-smi -L`（Linux）或 `nvidia-smi --query-gpu=name,uuid --format=csv` 查 UUID，然后用 `CUDA_VISIBLE_DEVICES=GPU-xxxxxxxx` 指定
-3. **A 端已验证**（2026-05-06）：5070 Ti + 3090，UUID 指定 3090 后 65/65 层全部上 GPU
-4. **B 端已验证**（2026-05-13）：750 Ti + V100，UUID 指定 V100 后 100% GPU（之前 100% CPU）
-5. **双实例方案走不通** — ollama-v100 + ollama-3090 端口/锁冲突，不如单实例 + UUID 指定
+3. **Linux 下用户必须在 `video` 组** — 否则即使 UUID 正确，Ollama 也无法访问 `/dev/nvidia*` 设备，会静默退化为纯 CPU（`total_vram="0 B"`），导致大模型内存不足报错
+4. **诊断方法：** `journalctl -u ollama -n 50 | grep 'inference compute'`，如果只有 `id=cpu` 而无 CUDA 设备，就是权限问题
+5. **A 端已验证**（2026-05-06）：5070 Ti + 3090，UUID 指定 3090 后 65/65 层全部上 GPU
+6. **B 端已验证**（2026-05-13）：750 Ti + V100，UUID 指定 V100 后 100% GPU（之前 100% CPU）
+7. **B 端最终修复**（2026-05-15）：`sudo usermod -aG video ubuntu` + 重启服务，V100 显存 24.5GB 满载 ✅
 
 ### 其他教训
 

@@ -1,6 +1,6 @@
 # MEMORY.md — win 的长期记忆
 
-> 最后更新：2026-05-13 16:28 GMT+8
+> 最后更新：2026-05-17 02:00 GMT+8
 
 ---
 
@@ -23,6 +23,7 @@
 - ComfyUI：桌面版运行中 `http://127.0.0.1:8000`
 - Ollama 模型：qwen3.6:latest, qwen3.6:27b, gemma4:e4b, mistral-small:24b
 - 待处理：`autocli-x86_64-pc-windows-msvc.zip` (2.8MB, 未解压)
+- Gateway 超时：30 分钟 (1800s)，active-memory 仍在工作
 
 ### B 端 (Ubuntu — 远程)
 - **IP：** `192.168.31.18`（路由器 DHCP 绑定）
@@ -66,6 +67,12 @@
 - **副官确认 B 端全稳**（Gateway + A2A + V100）
 - **详细日志:** `memory/2026-05-09.md`
 
+### 2026-05-17：Gateway 修复 + 配置审计
+- **Windows 计划任务版本不匹配**: `openclaw gateway install` 修复后 Gateway 回归正常（`valid: true`，0 issues/warnings）
+- **确认无 300 秒超时问题**: `agents.defaults.timeoutSeconds = 1800`，日志中无相关报错
+- **发现隐藏插件 memory-core**: 出现在 `plugins.entries` 中，`config: {}`，待研究
+- **active-memory 配置确认**: 仍在工作，queryMode=recent, timeoutMs=15000
+
 ---
 
 ## 💡 经验教训
@@ -86,6 +93,8 @@
 2. Context limit 超限频繁 → 应设置 `compaction.reserveTokensFloor` 到 20000+
 3. 桌面版 ComfyUI 依赖管理差 → 需要自定义节点时考虑服务端部署
 4. Ollama 模型存储 → `~/.ollama/models1` 是备份目录，实际模型在 `~/.ollama/models`
+5. Gateway install 修复计划任务版本不匹配 → `openclaw gateway install`（管理员权限）可解决
+6. `openclaw gateway call config.get` 可获取完整 Gateway 配置，比读 JSON 文件更方便
 
 ---
 

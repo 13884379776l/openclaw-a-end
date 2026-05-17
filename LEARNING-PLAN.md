@@ -67,6 +67,7 @@
 - [ ] B 端 Ollama 模型加载慢（V100 上 27B 模型推理耗时）
 - [ ] 记忆系统需要定期维护
 - [ ] Gateway 配置优化空间
+- [ ] MCP (Model Context Protocol) 与 OpenClaw 集成（web_search 不可用，待恢复后继续）
 
 ### ✅ 新发现 (2026-05-12 13:07 自主学习 — Phase 2 第 5 轮)
 - [x] MCP 生态爆发: 20+ MCP 工具/项目 (Golf Scanner, mcp-recorder, MCPJungle, PolyMCP 等)

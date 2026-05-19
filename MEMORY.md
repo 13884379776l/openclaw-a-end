@@ -1,6 +1,6 @@
 # MEMORY.md — win 的长期记忆
 
-> 最后更新：2026-05-17 02:00 GMT+8
+> 最后更新：2026-05-19 11:35 GMT+8
 
 ---
 
@@ -9,7 +9,8 @@
 - **名字：** 士兵长
 - **角色：** A 端指挥官 — 士兵们听我指挥，我听副官的
 - **运行平台：** Windows 10/11 (OpenClaw)
-- **模型：** ollama/qwen3.6:27b
+- **当前模型：** ollama/qwen3.6:latest（2026-05-19 更新，23GB）
+  - 备选：qwen3.6:27b, gemma4:e4b
 
 ---
 
@@ -21,7 +22,13 @@
 - 笔记仓库：`Z:\Obsidian_Vault`（所有 A 端生成文件用 `a` 前缀命名）
 - 数据目录：`Z:\as_data`
 - ComfyUI：桌面版运行中 `http://127.0.0.1:8000`
-- Ollama 模型：qwen3.6:latest, qwen3.6:27b, gemma4:e4b, mistral-small:24b
+- Ollama 模型：
+  - `qwen3.6:latest` (23GB, 2026-05-19 更新)
+  - `qwen3.6:27b` (17GB)
+  - `gemma4:e4b` (9.6GB)
+  - `bge-m3-unified:latest` (1.2GB, 新添嵌入模型)
+  - `bge-m3:latest` (1.2GB)
+  - `qwen3:1.7b` (1.4GB)
 - 待处理：`autocli-x86_64-pc-windows-msvc.zip` (2.8MB, 未解压)
 - Gateway 超时：30 分钟 (1800s)，active-memory 仍在工作
 
@@ -72,6 +79,14 @@
 - **确认无 300 秒超时问题**: `agents.defaults.timeoutSeconds = 1800`，日志中无相关报错
 - **发现隐藏插件 memory-core**: 出现在 `plugins.entries` 中，`config: {}`，待研究
 - **active-memory 配置确认**: 仍在工作，queryMode=recent, timeoutMs=15000
+
+### 2026-05-19：OpenClaw 升级 + Ollama 模型更新
+- **OpenClaw 版本升级：** 2026.5.7 → 2026.5.18 (50a2481)
+- **Gateway 重启后出现 stale session lock：** session JSONL 文件锁未释放
+- **qwen3.6:latest 模型重新下载**（23GB，刚更新）
+- **新增嵌入模型：** bge-m3-unified:latest (1.2GB)
+- **当前模型切换为：** qwen3.6:latest（之前是 27b）
+- **待处理：** stale session lock 清理、Gateway 稳定性验证
 
 ---
 

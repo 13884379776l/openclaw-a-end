@@ -4,7 +4,7 @@
 
 ### A. Gateway + Ollama 状态检查
 - curl -s http://127.0.0.1:18789/health | 确认 200
-- ollama list | 确认 qwen3.6:27b 存在
+- ollama list | 确认 qwen3.6:latest 存在
 - 结果追加到 memory/当天日期.md
 
 ### B. Git 状态 + 备份

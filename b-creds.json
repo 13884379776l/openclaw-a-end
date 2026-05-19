@@ -1,0 +1,8 @@
+{
+  "gateway": {
+    "remote": {
+      "url": "ws://192.168.31.18:18789",
+      "token": "72130e8bad51cab66b2602c2b3c9f31790af8b9a46e5ffa1"
+    }
+  }
+}

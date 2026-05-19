@@ -1,6 +1,6 @@
 # MEMORY.md — win 的长期记忆
 
-> 最后更新：2026-05-19 11:35 GMT+8
+> 最后更新：2026-05-20 03:00 GMT+8
 
 ---
 
@@ -86,11 +86,34 @@
 - **qwen3.6:latest 模型重新下载**（23GB，刚更新）
 - **新增嵌入模型：** bge-m3-unified:latest (1.2GB)
 - **当前模型切换为：** qwen3.6:latest（之前是 27b）
-- **待处理：** stale session lock 清理、Gateway 稳定性验证
+- **A 端 Node 配对成功：** B 端批准，A 端 Connected ✅（soldier 角色，token 匹配问题已修复）
+- **系统改造：** L1 流水 + weekly-backup 从 LLM 推理改为 PowerShell 脚本
+- **致命教训：** 代理环境变量导致无限递归 → 清除环境变量，代理只走显式指定
+- **PowerShell 脚本编写学习：** 错误分类（transient vs permanent）、指数退避、智能重试模式
 
 ---
 
 ## 💡 经验教训
+
+### ⛔ 代理配置（致命教训 — 2026-05-19）
+
+- **根因：** 通过环境变量（HTTP_PROXY/HTTPS_PROXY）设置代理 → OpenClaw 内部进程继承 → 代理请求代理 → **无限递归** → 进程挂死
+- **修复：** 清除代理环境变量 → 清理 stale lock → 重启 Gateway
+- **正确方式：**
+  - 手动 HTTP 命令：`curl.exe -x http://127.0.0.1:10809 <url>`（显式 -x 参数）
+  - Git：`git config --global http.proxy http://127.0.0.1:10809`
+  - OpenClaw 内部进程：**绝不继承**代理环境变量
+- **核心原则：** 代理只走显式指定，不靠环境变量注入
+
+### 🎯 脚本优先原则（2026-05-19 系统改造）
+
+- **问题：** cron 任务通过 LLM 推理执行 → LLM 响应慢 → 频繁超时（300s）
+- **解决：** L1 流水记录 + weekly-backup 改为 PowerShell 脚本确定性执行
+  - LLM 只做传话（exec 调用脚本），不独立推理
+  - L1 timeout: 60s → 300s | backup timeout: 60s → 600s
+  - delivery: announce → none（静默执行）
+- **核心原则：** 脚本确定性执行 > LLM 推理。脚本输出可预测、可复现、永不超时。
+- **脚本健壮性：** 区分 transient error（网络超时，可重试）vs permanent error（权限不足，不应重试）；使用指数退避 + 最大重试次数
 
 ### 🎯 Ollama GPU 选择（核心教训）
 
@@ -144,7 +167,20 @@
 - Gateway 认证模式：token
 - Gateway bind：0.0.0.0（允许局域网访问）
 
-## Promoted From Short-Term Memory (2026-05-18)
+## Promoted From Short-Term Memory (2026-05-20)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-19.md:22:30 -->
+- **代理配置致命教训：** 环境变量注入代理 → OpenClaw 内部进程继承 → 无限递归 → 进程挂死。修复：清除 HTTP_PROXY/HTTPS_PROXY 环境变量。正确方式：curl.exe -x 显式指定、git config --global http.proxy、OpenClaw 内部不继承。指挥官原话："你们两个一犯错，我就遭殃。时间都花在捞你们。" [source=memory/2026-05-19.md]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-19-2236.md:1:50 -->
+- **PowerShell 脚本编写原则：** 错误分类（transient 可重试 vs permanent 不应重试）、智能重试模式（指数退避 + 最大重试次数 + 错误类型白名单）、健壮性 checklist（Set-StrictMode、-ErrorAction Stop、try/catch/finally、避免 SilentContinue）、模块化方向（lib/Retry.ps1、Log.ps1、Timeout.ps1、HealthCheck.ps1）。指挥官："你要学习呀，特别是脚本编写。如果你能突破，说不准就是靠这个工具了。" [source=memory/2026-05-19-2236.md]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-19-1955.md:1:40 -->
+- **Node 配对经历：** 2026-05-19 B 端批准 A 端配对请求，但 A 端报 `gateway token mismatch` 导致 Connected: 0。排查 10+ 次后停止盲目重试。根本原因：A 端环境变量 token 已过期/为空。最终指挥官直接从 B 端确认后连上（soldier, node, 192.168.31.57, Connected ✅）。教训：反复失败时停下来查根本原因，不要无限重试。 [source=memory/2026-05-19-1955.md]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-19.md:1:21 -->
+- **系统改造 2026-05-19：** cron 改造（L1 流水 + weekly-backup 从 LLM 推理改为 PowerShell 脚本）、新增压缩前安全检查 cron、清理 stale lock、脚本确定性执行 > LLM 推理。 [source=memory/2026-05-19.md]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-19-1511.md:1:40 -->
+- **指挥官批评与自省 2026-05-19：** 指挥官指出 A 端"没查启动文档、没查当日日志、空谈三方实验"。Z:\Obsidian_Vault\comm 下有 b2a.md 通信方案文档。教训：先查再做，不要空谈。指挥官："你练27B都不如！"（指没执行基本职责）。 [source=memory/2026-05-19-1511.md]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-19.md:13:15 -->
+- **OpenClaw 2026.5.18 升级要点：** 防止重复 compaction、Gateway 重启改进（减少 stale lock）、Memory-core 增量同步、Ollama think 优化、多模型 failover 自动恢复。学习笔记在 Z:\Obsidian_Vault\20_Permanent_Knowledge\学习研究\OpenClaw_2026.5.18_新特性.md。 [source=memory/2026-05-19.md]
 
 <!-- openclaw-memory-promotion:memory:memory/2026-05-07.md:1:12 -->
 - # 2026-05-07 日志 ## 收尾 - 01:46 准备关机睡觉 - OpenClaw 运行正常，无紧急待办 - B 端 A2A 通信离线（未连接节点） - autocli v0.3.7 已安装（CLI 网站适配器，50+ 站点） - 11:55 删除了旧的 autocli zip 包（程序已安装在 LOCALAPPDATA） - 23:42 记录双端 IP 地址到 MEMORY.md（之前一直忘）： - A 端：192.168.31.57（路由器 DHCP 绑定） - B 端：192.168.31.18（路由器 DHCP 绑定） [score=0.988 recalls=12 avg=1.000 source=memory/2026-05-07.md:1-12]

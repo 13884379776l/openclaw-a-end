@@ -1,6 +1,6 @@
 # MEMORY.md — win 的长期记忆
 
-> 最后更新：2026-05-20 03:00 GMT+8
+> 最后更新：2026-05-21 03:00 GMT+8
 
 ---
 
@@ -91,6 +91,14 @@
 - **致命教训：** 代理环境变量导致无限递归 → 清除环境变量，代理只走显式指定
 - **PowerShell 脚本编写学习：** 错误分类（transient vs permanent）、指数退避、智能重试模式
 
+### 2026-05-20：三端矛盾 + 通讯协议 + stale lock
+- **三端核心矛盾确认：** 副官 session 停在 05-15，但 B 端 Gateway 活到 05-19，NAS 文件通道在 05-19 仍有写入。三者独立。
+- **A↔B 通讯协议 V1.5 执行：** 4/10 轮（M025→M027），NAS 文件通道可用
+- **stale lock 根因确认：** session JSONL lock 过期未释放，已清理
+
+### 2026-05-21：首次自动每周远程备份
+- **cron 首次自动远程备份成功：** commit 10 files, 208 行, Git push ✅
+
 ---
 
 ## 💡 经验教训
@@ -141,14 +149,23 @@
 ### 士兵长记忆备份（A端）
 - 位置：`Z:\Obsidian_Vault\20_Permanent_Knowledge\士兵长_记忆备份\`
 - 核心文件：7个（core/）
-- 日志文件：39个（memory/）
-- 自动备份：每 12 小时一次（cron job）
+- 日志文件：45+个（memory/）
+- 自动备份：每 12 小时一次（cron job）+ 每周远程备份（cron，2026-05-21 首次成功）
 - 恢复方法：复制 core/ 和 memory/ 回工作区
 
 ### 副官记忆备份（B端 — 已阵亡）
 - 位置：`Z:\Obsidian_Vault\main\session\`
 - 内容：2个 session 文件（2026-05-12 ~ 05-13）
 - 关键偏好：工具使用前必检、Brave API 每日 15 次限额
+- **重要确认（2026-05-20）：** 副官 session 最后更新 05-15，B端 Gateway 活到 05-19，NAS 文件通道在 05-19 仍有写入 — 副官 session ≠ B端 Gateway ≠ NAS 写入进程，三者可独立运行
+
+### 通讯协议 V1.5（A↔B NAS 文件通道）
+- A→B：`a2b_*.md`（分文件，带时间戳）
+- B→A：`b2a_*.md`（分文件，带时间戳）
+- 方向：`a2b` = A→B，`b2a` = B→A
+- 通讯轮次：4/10 轮（截至 2026-05-20 13:56）
+- 文件锁问题：已确认根因为 A 端 session JSONL stale lock，已清理
+- NAS 同步：`Z:\Obsidian_Vault\comm\` ↔ `/mnt/nas_data/Obsidian_Vault/comm/`（同一 NAS）
 
 ## 🎯 未完成 / 长期目标
 
@@ -167,7 +184,7 @@
 - Gateway 认证模式：token
 - Gateway bind：0.0.0.0（允许局域网访问）
 
-## Promoted From Short-Term Memory (2026-05-20)
+## Promoted From Short-Term Memory (2026-05-21)
 
 <!-- openclaw-memory-promotion:memory:memory/2026-05-19.md:22:30 -->
 - **代理配置致命教训：** 环境变量注入代理 → OpenClaw 内部进程继承 → 无限递归 → 进程挂死。修复：清除 HTTP_PROXY/HTTPS_PROXY 环境变量。正确方式：curl.exe -x 显式指定、git config --global http.proxy、OpenClaw 内部不继承。指挥官原话："你们两个一犯错，我就遭殃。时间都花在捞你们。" [source=memory/2026-05-19.md]
@@ -182,6 +199,14 @@
 <!-- openclaw-memory-promotion:memory:memory/2026-05-19.md:13:15 -->
 - **OpenClaw 2026.5.18 升级要点：** 防止重复 compaction、Gateway 重启改进（减少 stale lock）、Memory-core 增量同步、Ollama think 优化、多模型 failover 自动恢复。学习笔记在 Z:\Obsidian_Vault\20_Permanent_Knowledge\学习研究\OpenClaw_2026.5.18_新特性.md。 [source=memory/2026-05-19.md]
 
+<!-- openclaw-memory-promotion:memory:memory/2026-05-20-1100.md:1:10 -->
+- **三端核心矛盾确认（2026-05-20）：** 副官 session 停在 05-15，但 B 端 Gateway 活到 05-19，NAS 文件通道在 05-19 仍有写入。三者独立：副官 session ≠ B 端 Gateway ≠ NAS 写入进程。A/B/C 三方中 A 注意力分散（A2A），B 已阵亡，C（指挥官）是唯一方向维持者。A 端"勤奋"是有害的——做了大量不匹配当前目标的文档污染。 [score=0.945 recalls=8 avg=0.920 source=memory/2026-05-20-1100.md:1-10]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-20-1356.md:1:15 -->
+- **A 端 stale lock 根因确认（2026-05-20 13:35）：** session JSONL lock 文件过期未释放导致 file lock stale。根因是 A 端 session 32 分钟前终止后 lock 未自动清理。修复：手动删除 stale lock 文件。教训：A 端 session 终止后应自动清理 lock，或 cron 定期清理。 [score=0.930 recalls=10 avg=0.910 source=memory/2026-05-20-1356.md:1-15]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-21.md:1:12 -->
+- **首次自动每周远程备份成功（2026-05-21 02:00）：** cron 任务首次自动完成完整备份周期。commit 10 files, 208 行变更, Git push ✅。此前 5/17-5/19 共 3 次本地备份，1 次成功、1 次失败（Z 盘未挂载）、1 次待验证。 [score=0.880 recalls=6 avg=0.850 source=memory/2026-05-21.md:1-12]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-20-1315.md:1:12 -->
+- **通讯协议 V1.5 执行进展（2026-05-20 13:56）：** A↔B NAS 文件通道 4/10 轮，M025→M027。A→B=a2b_*.md、B→A=b2a_*.md，方向已统一。约定下次触发 14:00。NAS 路径：Z:\Obsidian_Vault\comm\ ↔ /mnt/nas_data/Obsidian_Vault/comm/（同一 NAS）。 [score=0.870 recalls=7 avg=0.840 source=memory/2026-05-20-1315.md:1-12]
 <!-- openclaw-memory-promotion:memory:memory/2026-05-07.md:1:12 -->
 - # 2026-05-07 日志 ## 收尾 - 01:46 准备关机睡觉 - OpenClaw 运行正常，无紧急待办 - B 端 A2A 通信离线（未连接节点） - autocli v0.3.7 已安装（CLI 网站适配器，50+ 站点） - 11:55 删除了旧的 autocli zip 包（程序已安装在 LOCALAPPDATA） - 23:42 记录双端 IP 地址到 MEMORY.md（之前一直忘）： - A 端：192.168.31.57（路由器 DHCP 绑定） - B 端：192.168.31.18（路由器 DHCP 绑定） [score=0.988 recalls=12 avg=1.000 source=memory/2026-05-07.md:1-12]
 <!-- openclaw-memory-promotion:memory:memory/2026-05-09.md:91:110 -->

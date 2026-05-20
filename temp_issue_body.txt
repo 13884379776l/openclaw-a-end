@@ -1,0 +1,30 @@
+## Bug Description
+
+On Windows, the OpenClaw Gateway heartbeat mechanism spawns a visible cmd.exe window that runs `findstr /I /C:"Running"` to check scheduled task status. The window stays open with a black screen and the command visible in the title bar.
+
+## Reproduction
+
+1. Run OpenClaw Gateway on Windows
+2. Wait for the heartbeat mechanism to trigger
+3. A black cmd window appears with title `findstr /I /C:"Running"`
+
+## Evidence
+
+- **Process chain:** `node.exe (Gateway, PID 2876) -> cmd.exe (PID 3616) -> findstr.exe (PID 7464)`
+- **Script:** `openclaw-schtasks-restart-f4da4e89-9886-46c2-9f9d-824effe788c5.cmd`
+- **Location:** `C:\Users\48856\AppData\Local\Temp\openclaw\`
+- **Screenshot:** Attached (black terminal with findstr command in title bar)
+
+## Expected Behavior
+
+The heartbeat check should run silently (no visible window). Use `start /min` or redirect output to `$null` in the temporary script.
+
+## OpenClaw Version
+
+- Version: 2026.5.18 (50a2481)
+- Platform: Windows 11
+- Shell: PowerShell
+
+## Root Cause Analysis
+
+The temporary restart script (`openclaw-schtasks-restart-*.cmd`) uses `findstr /I /C:"Running"` without `start /min` or output redirection, causing a persistent visible window.

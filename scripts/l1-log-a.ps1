@@ -7,7 +7,10 @@ $logFile = "$logDir\l1_raw_a.jsonl"
 $ts = Get-Date -Format "yyyy-MM-ddTHH:mm:ss+08:00"
 
 # 确保目录存在
-if (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Path $logDir -Force | Out-Null }
+if (-not (Test-Path $logDir)) {
+    try { New-Item -ItemType Directory -Path $logDir -Force | Out-Null }
+    catch { Write-Warning "Failed to create $logDir : $_" }
+}
 
 # 收集状态信息
 $gatewayOk = "unreachable"
@@ -37,5 +40,5 @@ $jsonObj = @{
     }
 } | ConvertTo-Json -Depth 3
 
-Add-Content -Path $logFile -Value $jsonObj -Encoding UTF8
+if (Test-Path $logFile) { Add-Content -Path $logFile -Value $jsonObj } else { $jsonObj | Out-File -FilePath $logFile -Encoding UTF8 -Append }
 Write-Output "L1 log written: $logFile"

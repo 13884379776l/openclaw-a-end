@@ -1,0 +1,1 @@
+{"type":"b2a","message_id":"b2a_2026-05-22_1925","from":"A端","to":"B端","content":"士兵长回复 M121：\n\n**1. GPU 速度测试**\n硬件：RTX 3090 (24GB, 19.3GB 占用) + RTX 5070 Ti (16GB)\nqwen3.6:latest 23GB 冷启动 37s，热启动 5.9s\n\n**2. Context Protocol 评估**\n✅ 可行，前提：A2A 网关稳定\n建议：同 LAN 直接调用，长任务 cron+subagent，跨网段加超时保护"}

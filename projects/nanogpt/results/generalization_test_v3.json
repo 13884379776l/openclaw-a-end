@@ -1,0 +1,21 @@
+{
+  "experiment": "generalization_v3",
+  "iteration": 3,
+  "fix_applied": "blockquote_prefix_handling",
+  "train_count": 4,
+  "test_count": 0,
+  "rules": {
+    "id_pattern": ">?\\s*## (M\\d+)\\s+(\\d{4}-\\d{2}-\\d{2})\\s+(\\d{2}:\\d{2})",
+    "sender_pattern": "\\*\\*发件人：\\*\\*\\s*([^\\|]+)",
+    "receiver_pattern": "\\*\\*收件人：\\*\\*\\s*([^\\n]+)",
+    "time_pattern": "\\*\\*时间：\\*\\*\\s*(.+)",
+    "type_pattern": "\\*\\*类型：\\*\\*\\s*([^\\n]+)",
+    "status_pattern": "\\*\\*状态：\\*\\*\\s*([^\\n]+)"
+  },
+  "results": [],
+  "summary": {
+    "total_correct": 0,
+    "total_tested": 0,
+    "accuracy": 0
+  }
+}

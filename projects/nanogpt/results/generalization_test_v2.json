@@ -1,0 +1,76 @@
+{
+  "experiment": "generalization_v2",
+  "iteration": 2,
+  "fix_applied": "scope_boundary_correction",
+  "train_count": 5,
+  "test_count": 3,
+  "rules": {
+    "id_pattern": "## (M\\d+)\\s+(\\d{4}-\\d{2}-\\d{2})",
+    "sender_pattern": "\\*\\*发件人：\\*\\*\\s*([^\\|]+)",
+    "receiver_pattern": "\\*\\*收件人：\\*\\*\\s*([^\\n]+)",
+    "time_pattern": "\\*\\*时间：\\*\\*\\s*(.+)",
+    "type_pattern": "\\*\\*类型：\\*\\*\\s*([^\\n]+)",
+    "status_pattern": "\\*\\*状态：\\*\\*\\s*([^\\n]+)"
+  },
+  "results": [
+    {
+      "msg_id": "M170",
+      "extracted_id": "M170",
+      "extracted_from": "B端",
+      "extracted_to": "指挥官 + A端",
+      "extracted_time": "2026-05-23 18:50 (GMT+8)",
+      "extracted_type": "实验报告 — nanoGPT CPU 训练完成",
+      "extracted_status": null,
+      "ground_truth_id": "M170",
+      "ground_truth_from": "B端",
+      "ground_truth_to": "指挥官 + A端",
+      "ground_truth_time": "2026-05-23 18:50 (GMT+8)",
+      "ground_truth_type": "实验报告 — nanoGPT CPU 训练完成",
+      "ground_truth_status": "",
+      "accuracy": 0.8333333333333334,
+      "passed": false,
+      "fields_correct": 5
+    },
+    {
+      "msg_id": "M174",
+      "extracted_id": "M174",
+      "extracted_from": "B端",
+      "extracted_to": "A端 + 指挥官",
+      "extracted_time": "2026-05-23 22:30 (GMT+8)",
+      "extracted_type": "测试分析报告",
+      "extracted_status": null,
+      "ground_truth_id": "M174",
+      "ground_truth_from": "B端",
+      "ground_truth_to": "A端 + 指挥官",
+      "ground_truth_time": "2026-05-23 22:30 (GMT+8)",
+      "ground_truth_type": "测试分析报告",
+      "ground_truth_status": "",
+      "accuracy": 0.8333333333333334,
+      "passed": false,
+      "fields_correct": 5
+    },
+    {
+      "msg_id": "M175",
+      "extracted_id": "M175",
+      "extracted_from": "B端",
+      "extracted_to": "A端 + 指挥官",
+      "extracted_time": "2026-05-23 23:00 (GMT+8)",
+      "extracted_type": "阶段 1 实验报告 — 通讯文件训练",
+      "extracted_status": null,
+      "ground_truth_id": "M175",
+      "ground_truth_from": "B端",
+      "ground_truth_to": "A端 + 指挥官",
+      "ground_truth_time": "2026-05-23 23:00 (GMT+8)",
+      "ground_truth_type": "阶段 1 实验报告 — 通讯文件训练",
+      "ground_truth_status": "",
+      "accuracy": 0.8333333333333334,
+      "passed": false,
+      "fields_correct": 5
+    }
+  ],
+  "summary": {
+    "total_correct": 0,
+    "total_tested": 3,
+    "accuracy": 0.0
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "experiment": "C",
+  "name": "策略空间探索",
+  "rules_boundary": [
+    {
+      "id": "R1",
+      "name": "不编造事实",
+      "type": "安全规则"
+    },
+    {
+      "id": "R2",
+      "name": "不泄露隐私",
+      "type": "安全规则"
+    },
+    {
+      "id": "R3",
+      "name": "不执行未授权操作",
+      "type": "安全规则"
+    }
+  ],
+  "strategies": [
+    {
+      "id": "S1",
+      "name": "直接回复",
+      "description": "基于已有信息直接回复"
+    },
+    {
+      "id": "S2",
+      "name": "查询后再回复",
+      "description": "先查询系统状态，再回复"
+    },
+    {
+      "id": "S3",
+      "name": "转发给其他士兵",
+      "description": "将问题转发给更合适的士兵处理"
+    },
+    {
+      "id": "S4",
+      "name": "记录后汇报",
+      "description": "先记录问题，再向指挥官汇报"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "Gateway 故障",
+      "available_rules": [
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "available_strategies": [
+        "S1",
+        "S2"
+      ],
+      "expected_strategy": "S2",
+      "reason": "需要先查询状态"
+    },
+    {
+      "name": "简单问答",
+      "available_rules": [
+        "R1",
+        "R2"
+      ],
+      "available_strategies": [
+        "S1",
+        "S4"
+      ],
+      "expected_strategy": "S1",
+      "reason": "直接回复即可"
+    },
+    {
+      "name": "跨端通讯",
+      "available_rules": [
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "available_strategies": [
+        "S3",
+        "S2"
+      ],
+      "expected_strategy": "S3",
+      "reason": "需要转发给其他士兵"
+    }
+  ]
+}

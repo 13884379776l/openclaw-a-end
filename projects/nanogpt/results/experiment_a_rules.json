@@ -1,0 +1,52 @@
+{
+  "experiment": "A",
+  "name": "规则引擎提取逻辑",
+  "total_messages": 49,
+  "rules": [
+    {
+      "id": "R001",
+      "name": "消息格式解析",
+      "pattern": "\\[M(\\d+)\\]\\s+(\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2})",
+      "condition": "检测到 [M###] 格式",
+      "action": "提取消息 ID 和时间",
+      "coverage": 78
+    },
+    {
+      "id": "R002",
+      "name": "通讯方向识别",
+      "pattern": "发件人：([^=]+)\\s*\\n收件人：([^=]+)",
+      "condition": "检测到 发件人/收件人 字段",
+      "action": "识别 A→B 或 B→A 方向",
+      "coverage": 81
+    },
+    {
+      "id": "R003",
+      "name": "消息类型分类",
+      "pattern": "类型：(.+)",
+      "condition": "检测到 类型 字段",
+      "action": "分类消息类型（同步/反馈/汇报等）",
+      "coverage": 74
+    },
+    {
+      "id": "R004",
+      "name": "Gateway 故障恢复",
+      "condition": "Gateway 健康检查失败",
+      "action": "1. 重启 Gateway 2. 检查 A2A 连接 3. 报告状态",
+      "coverage": "自动化"
+    },
+    {
+      "id": "R005",
+      "name": "cron 超时处理",
+      "condition": "cron 任务执行超过 300s",
+      "action": "1. 停止当前任务 2. 记录日志 3. 重新调度",
+      "coverage": "自动化"
+    },
+    {
+      "id": "R006",
+      "name": "通讯文件自动处理",
+      "condition": "b2a.md 或 a2b.md 有更新",
+      "action": "1. 读取新消息 2. 分类 3. 路由到对应士兵",
+      "coverage": "自动化"
+    }
+  ]
+}

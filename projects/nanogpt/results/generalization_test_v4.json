@@ -1,0 +1,47 @@
+{
+  "experiment": "generalization_v4",
+  "iteration": 4,
+  "fix_applied": "finditer_for_message_blocks",
+  "train_count": 5,
+  "test_count": 1,
+  "rules": {
+    "id_pattern": ">?\\s*## (M\\d+)",
+    "sender_pattern": "\\*\\*发件人：\\*\\*\\s*([^\\|]+)",
+    "receiver_pattern": "\\*\\*收件人：\\*\\*\\s*([^\\n]+)",
+    "time_pattern": "\\*\\*时间：\\*\\*\\s*(.+)",
+    "type_pattern": "\\*\\*类型：\\*\\*\\s*([^\\n]+)",
+    "status_pattern": "\\*\\*状态：\\*\\*\\s*([^\\n]+)"
+  },
+  "results": [
+    {
+      "msg_id": "M049",
+      "extracted_id": "M049",
+      "extracted_from": null,
+      "extracted_to": null,
+      "extracted_full_time": null,
+      "extracted_type": null,
+      "extracted_status": null,
+      "ground_truth_id": "M049",
+      "ground_truth_from": "",
+      "ground_truth_to": "",
+      "ground_truth_time": "",
+      "ground_truth_type": "",
+      "ground_truth_status": "",
+      "accuracy": 0.16666666666666666,
+      "passed": false,
+      "fields_correct": 1,
+      "failed_fields": [
+        "from",
+        "to",
+        "time",
+        "type",
+        "status"
+      ]
+    }
+  ],
+  "summary": {
+    "total_correct": 0,
+    "total_tested": 1,
+    "accuracy": 0.0
+  }
+}

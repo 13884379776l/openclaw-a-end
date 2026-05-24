@@ -1,0 +1,74 @@
+{
+  "experiment": "generalization_fixed",
+  "train_count": 5,
+  "test_count": 3,
+  "rules": {
+    "id_pattern": "## (M\\d+)\\s+(\\d{4}-\\d{2}-\\d{2})",
+    "sender_pattern": "\\*\\*发件人：\\*\\*\\s*([^\\|]+)",
+    "receiver_pattern": "\\*\\*收件人：\\*\\*\\s*([^\\n]+)",
+    "time_pattern": "\\*\\*时间：\\*\\*\\s*(.+)",
+    "type_pattern": "\\*\\*类型：\\*\\*\\s*([^\\n]+)",
+    "status_pattern": "\\*\\*状态：\\*\\*\\s*([^\\n]+)"
+  },
+  "results": [
+    {
+      "msg_id": "M170",
+      "extracted_id": "M117",
+      "extracted_from": "B端",
+      "extracted_to": "A端",
+      "extracted_time": "2026-05-21 10:45 (GMT+8)",
+      "extracted_type": "通知",
+      "extracted_status": "已完成",
+      "ground_truth_id": "M170",
+      "ground_truth_from": "B端",
+      "ground_truth_to": "A端",
+      "ground_truth_time": "2026-05-21 10:45 (GMT+8)",
+      "ground_truth_type": "通知",
+      "ground_truth_status": "已完成",
+      "accuracy": 0.8333333333333334,
+      "passed": false,
+      "fields_correct": 5
+    },
+    {
+      "msg_id": "M174",
+      "extracted_id": "M117",
+      "extracted_from": "B端",
+      "extracted_to": "A端",
+      "extracted_time": "2026-05-21 10:45 (GMT+8)",
+      "extracted_type": "通知",
+      "extracted_status": "已完成",
+      "ground_truth_id": "M174",
+      "ground_truth_from": "B端",
+      "ground_truth_to": "A端",
+      "ground_truth_time": "2026-05-21 10:45 (GMT+8)",
+      "ground_truth_type": "通知",
+      "ground_truth_status": "已完成",
+      "accuracy": 0.8333333333333334,
+      "passed": false,
+      "fields_correct": 5
+    },
+    {
+      "msg_id": "M175",
+      "extracted_id": "M117",
+      "extracted_from": "B端",
+      "extracted_to": "A端",
+      "extracted_time": "2026-05-21 10:45 (GMT+8)",
+      "extracted_type": "通知",
+      "extracted_status": "已完成",
+      "ground_truth_id": "M175",
+      "ground_truth_from": "B端",
+      "ground_truth_to": "A端",
+      "ground_truth_time": "2026-05-21 10:45 (GMT+8)",
+      "ground_truth_type": "通知",
+      "ground_truth_status": "已完成",
+      "accuracy": 0.8333333333333334,
+      "passed": false,
+      "fields_correct": 5
+    }
+  ],
+  "summary": {
+    "total_correct": 0,
+    "total_tested": 3,
+    "accuracy": 0.0
+  }
+}

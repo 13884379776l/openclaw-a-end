@@ -1,0 +1,27 @@
+{
+  "tech_docs": {
+    "count": 6,
+    "chars": 15447,
+    "patterns": {
+      "if": 0,
+      "for": 1,
+      "def": 0,
+      "import": 3,
+      "class": 0,
+      "return": 0,
+      "try": 0,
+      "json": 0,
+      "config": 0
+    },
+    "code_blocks": 14
+  },
+  "natural_lang": {
+    "count": 80,
+    "chars": 129935,
+    "dialogue_lines": 329
+  },
+  "common_patterns": {
+    "if_then": 2,
+    "for_loop": 1
+  }
+}

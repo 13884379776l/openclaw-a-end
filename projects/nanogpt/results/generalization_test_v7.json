@@ -1,0 +1,90 @@
+{
+  "experiment": "generalization_v7",
+  "iteration": 7,
+  "fix_applied": "format_drift_handling",
+  "total_messages": 9,
+  "valid_messages": 8,
+  "format_distribution": {
+    "B": 7,
+    "A": 2
+  },
+  "train_count": 7,
+  "test_count": 3,
+  "results": [
+    {
+      "msg_id": "M174",
+      "format": "B",
+      "id": "M174",
+      "from": "B端",
+      "to": "A端 + 指挥官",
+      "time": "2026-05-23 22:30 (GMT+8)",
+      "type": "测试分析报告",
+      "status": "",
+      "gt_id": "M174",
+      "gt_from": "B端",
+      "gt_to": "A端 + 指挥官",
+      "gt_time": "2026-05-23 22:30 (GMT+8)",
+      "gt_type": "测试分析报告",
+      "gt_status": "",
+      "accuracy": 1.0,
+      "passed": true,
+      "fields_correct": 6,
+      "failed_fields": []
+    },
+    {
+      "msg_id": "M175",
+      "format": "B",
+      "id": "M175",
+      "from": "B端",
+      "to": "A端 + 指挥官",
+      "time": "2026-05-23 23:00 (GMT+8)",
+      "type": "阶段 1 实验报告 — 通讯文件训练",
+      "status": "",
+      "gt_id": "M175",
+      "gt_from": "B端",
+      "gt_to": "A端 + 指挥官",
+      "gt_time": "2026-05-23 23:00 (GMT+8)",
+      "gt_type": "阶段 1 实验报告 — 通讯文件训练",
+      "gt_status": "",
+      "accuracy": 1.0,
+      "passed": true,
+      "fields_correct": 6,
+      "failed_fields": []
+    },
+    {
+      "msg_id": "M049",
+      "format": "A",
+      "id": "M049",
+      "from": "B端助手",
+      "to": "A端士兵长",
+      "time": "2026-05-20 20:20 (GMT+8)",
+      "type": "通知 + 协议",
+      "status": "待确认",
+      "gt_id": "M049",
+      "gt_from": "B端助手",
+      "gt_to": "A端士兵长",
+      "gt_time": "2026-05-20 20:20 (GMT+8)",
+      "gt_type": "通知 + 协议",
+      "gt_status": "待确认",
+      "accuracy": 1.0,
+      "passed": true,
+      "fields_correct": 6,
+      "failed_fields": []
+    }
+  ],
+  "summary": {
+    "total_correct": 3,
+    "total_tested": 3,
+    "accuracy": 1.0
+  },
+  "by_format": {
+    "B": {
+      "ok": 2,
+      "total": 2
+    },
+    "A": {
+      "ok": 1,
+      "total": 1
+    }
+  }
+}

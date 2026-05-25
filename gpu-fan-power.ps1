@@ -1,9 +1,13 @@
-# gpu-fan-power.ps1
-# RTX 3090 + 5070 Ti smart fan curve + power limit control (PowerShell version)
-# Fan curve: 40C+ => 100%, 35-40 => 60-100%, 30-35 => 40-60%, below 30 => 30%
-# GPU0 (3090) power limit: 315W
+# Power limits: GPU0 (3090) 85% = 255W, GPU1 (5070 Ti) = max 380W
 
 $ErrorActionPreference = "SilentlyContinue"
+
+# ── Power limit config (85% of TDP, nvidia-smi uses W not mW) ──
+$gpuPowerLimits = @{
+    0 = 255   # GPU0 (5070 Ti): 300W * 0.85 ≈ 255W (max 380W for 5070 Ti, 300W default cap)
+    1 = 315   # GPU1 (3090): 370W * 0.85 ≈ 315W (max 300W for 3090)
+}
+
 
 # ── Fan curve config ──
 function Get-TargetFan {
@@ -42,9 +46,18 @@ if (-not $gpus) {
     }
 }
 
-# ── Get GPU info ──
-Write-Host "[GPU0] Found GPU devices" -ForegroundColor Green
-Write-Host "Starting smart fan control..." -ForegroundColor Yellow
+# ── Set power limits (85% of TDP) ──
+Write-Host "[SET] Applying power limits (85% of TDP)..." -ForegroundColor Cyan
+foreach ($gpuIdx in $gpuPowerLimits.Keys) {
+    try {
+        $plW = $gpuPowerLimits[$gpuIdx] / 1000
+        $result = nvidia-smi -i $gpuIdx -pl $gpuPowerLimits[$gpuIdx] 2>$null
+        Write-Host "  [GPU$gpuIdx] Power limit: $plW W" -ForegroundColor Green
+    } catch {
+        Write-Host "  [GPU$gpuIdx] Power limit failed: $_" -ForegroundColor Red
+    }
+}
+Write-Host "Starting smart fan + power control..." -ForegroundColor Yellow
 Write-Host "Press Ctrl+C to stop." -ForegroundColor Gray
 Write-Host "" -NoNewline
 

@@ -21,7 +21,7 @@ $backupResults = @()
 if ($backupLines -ne $null) {
     foreach ($m in $backupLines) {
         $line = $m.Value
-        if ($line -match "commit (?:OK|skip|FAILED|ERROR|commit") {
+        if ($line -match "commit") {
             if ($line -match "OK") { $successCount++ } else { $failCount++ }
         }
     }

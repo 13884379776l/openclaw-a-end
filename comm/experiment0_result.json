@@ -1,0 +1,10 @@
+﻿{
+    "model":  "bge-m3",
+    "sentenceCount":  10,
+    "timestamp":  "2026-05-26 01:54:05",
+    "experiment":  "0",
+    "conclusion":  "Latent space DOES NOT contain language structure (sim \u003c 0.6) - need re-encoding",
+    "maxCosineSimilarity":  0.745,
+    "meanCosineSimilarity":  0.5895,
+    "minCosineSimilarity":  0.3847
+}

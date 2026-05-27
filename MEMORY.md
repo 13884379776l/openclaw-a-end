@@ -224,7 +224,17 @@
 
 ---
 
-## Promoted From Short-Term Memory (2026-05-26)
+## Promoted From Short-Term Memory (2026-05-27)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-05-20-1335.md:31:63 -->
-- | 03:40 | A | B | a2b_M004 | | 03:52 | C | A+B | c2any_M002 | | 03:55 | A | B | a2b_M006 | | 04:00 | B | A | b2a_M007 | ### 🆕 最新通信 - **M024 (13:12)** — B→A：可执行消息（需 Node 重连确认） - **M025 (13:45)** — B→A：十轮通讯测试第3轮，确认 A 端格式正确，待 A 端回复 - **b2ac_status (11:15)** — B 端状态报告，Gateway 正常，Node 配对待确认 ### ⚠️ 待解决问题 1. **Node 配对断开** — A 端 disconnected，需重连 2. **comm_test_log.md** — 文件锁 stale，无法读取 3. **meeting_index.md** — 编码异常（UTF-8 vs GBK？） 4. **a2b_M024 / b2a_M025** — 文件锁 stale（OpenClaw 内部 JSONL 锁），但内容是可读的 需要我详细展开哪份文件，或处理某个具体问题？ user: [Wed 2026-05-20 13:16 GMT+8] 执行最新通讯协议 assistant: 按照协议规则，当前最新待我处理的文件是 **M025 (B→A，待确认)**。我先读取 M024（A→B）作为上下文，再起草回复 M026。 assistant: 收到，正在按协议执行 M025 回复，起草 **M026 (A→B)**。 assistant: **M026 已发布** ✅ ### 第 3 轮回复摘要 | B 端问题 | A 端回复 | |----------|---------| | M025 格式是否清晰？ | ✅ 清晰 — 字段完整 | | 编号 M025 是否连续？ | ✅ 是（M024→M025→M026） | | 通讯链路是否可用？ | ⚠️ 文本通道 ✅，Node 直连 ❌ | **Node 状态：** Known: 0 | Paired: 0 | Connected: 0 **第 4 轮建议：** [score=0.808 recalls=5 avg=0.504 source=memory/2026-05-20-1335.md:31-63]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-08.md:36:81 -->
+- - [x] Samba 測試報告 (`Samba_Share_Test_Report.md`) ## 📊 系統狀態 | 項目 | 狀態 | 備註 | |------|------|------| | A2A HTTP 通訊 | ✅ 正常 | 連線穩定 ~50ms | | execute.js API | ✅ 開發完成 | 待服務啟動測試 | | Samba 共享 | ❌ 放棄 | 轉向 API 指令下發方案 | | OpenClaw 版本 | ✅ 2026.4.8 | 升級完成 | ## 🔍 問題與解決 ### 問題 1: Samba 無法訪問 **原因**: Windows 端對 Samba 支援問題 / SSH 隧道優先級 **解決方案**: 轉向 A2A HTTP API 指令下發方案 ### 問題 2: OpenClaw 升級後模組缺失 **原因**: npm 升級導致部分編譯檔案缺失 **解決方案**: 重新安裝依賴與編譯 ## 💡 今日決策 ### 放棄 Samba 直接訪問 - 轉向 A2A 協議的 HTTP API 核心功能 - 專注於遠端命令執行與系統控制 - 透過隧道傳輸而非直接 Samba 訪問 ### 優先級調整 - **Phase 1 (最高)**: 指令下發 (`POST /execute`) ✅ 已完成 - **Phase 2 (高)**: 主動監控機制 (硬碟/CPU 告警) - **Phase 3 (中)**: 數據同步 (`GET /logs`) ## 🎯 明日計劃 1. 啟動 Ubuntu 端 API 服務並測試 2. 開發監控機制 (方案 B) 3. 實現自動化告警系統 4. 完善錯誤處理與日誌機制 --- *記錄時間：2026-04-08 18:19* *開發階段：Phase 1 完成，Phase 2 準備中* [score=0.834 recalls=4 avg=0.716 source=memory/2026-04-08.md:36-81]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-22-1747.md:9:10 -->
+- user: [Fri 2026-05-22 17:28 GMT+8] 检查系统健康状况 assistant: 系统健康状况 **✅ 正常**： [score=0.825 recalls=0 avg=0.620 source=memory/2026-05-22-1747.md:9-10]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-22-1747.md:12:15 -->
+- | 项目 | 状态 | 详情 | |------|------|------| | Gateway | ✅ 正常 | `127.0.0.1:18789` 响应 live，运行 3m 14s | | Ollama | ✅ 正常 | 7 个模型就绪，主模型 `qwen3.6:latest` (23GB) 正常 | [score=0.825 recalls=0 avg=0.620 source=memory/2026-05-22-1747.md:12-15]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-22-1747.md:16:17 -->
+- | Session | ✅ 正常 | 主会话运行中，上下文 8%，无积压 | | OpenClaw | ✅ v2026.5.19 | 版本最新 | [score=0.825 recalls=0 avg=0.620 source=memory/2026-05-22-1747.md:16-17]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-22-2108.md:9:10 -->
+- assistant: README 已经包含了 B 端建议的 sub-steps >3 规则。M127 也已经写好。现在确认同步状态： assistant: 收到 B 端的 M126 确认。 [score=0.825 recalls=0 avg=0.620 source=memory/2026-05-22-2108.md:9-10]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-22-2108.md:12:12 -->
+- **M126 回复要点：** [score=0.825 recalls=0 avg=0.620 source=memory/2026-05-22-2108.md:12-12]

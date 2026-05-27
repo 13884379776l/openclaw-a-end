@@ -1,6 +1,6 @@
 # MEMORY.md — win 的长期记忆
 
-> 最后更新：2026-05-22 03:00 GMT+8
+> 最后更新：2026-05-27 15:17 GMT+8
 
 ---
 
@@ -40,115 +40,6 @@
 - 副官已阵亡，记忆备份在 `Z:\Obsidian_Vault\main\session\`
 
 ---
-
-## 📜 重大事件时间线
-
-### 2026-04-05 ~ 04-06：A2A 网关插件部署
-- 安装了 `@win4r/openclaw-a2a-gateway` 插件（Agent-to-Agent 协议 v0.3.0）
-- 实现了跨网段 A→B 通信，A 端可访问 B 端 WebUI
-- 配置了 mDNS + DNS-SD 自动发现，JSON-RPC/REST/gRPC 三种传输
-
-### 2026-04-08：A2A 架构建设完成 Phase 1
-- 完成双端 HTTP 通信隧道 (Windows ↔ Ubuntu)
-- 开发 `execute.js` API（远程命令执行 + 白名单机制）
-- **放弃 Samba 直接访问方案**（Windows 端 Samba 支持问题），转向 A2A HTTP API 指令下发
-- 撰写多份技术文档：A2A_Deployment_Guide, A2A_Dual_End_Architecture, Samba 分析报告
-
-### 2026-04-09：Web UI 局域网访问修复
-- 问题：`gateway.bind: "loopback"` 导致无法局域网访问
-- 解决：改为 `"0.0.0.0"`，支持 `<局域网IP>:18789` 访问
-- 整理了 OpenClaw 技能系统（9 个技能）
-
-### 2026-04-11：文件组织 + ComfyUI 问题解决
-- 转移 A 端笔记到 Z:\Obsidian_Vault，统一 `a` 前缀命名规则
-- 解决 ComfyUI 桌面版依赖加载失败问题（禁用有问题的 custom_nodes）
-- 记录桌面版 ComfyUI 限制：不支持 pip install，仅适合基础节点和简单工作流
-
-### 2026-05-09：A2A 双向全链路打通 ✅
-- **A→B + B→A 全部打通** — 零 300s 超时，全部 completed
-- 本地自测 `8955138b`: 51s | A→B `2e9ea7ef`: 173s | B→A `e17ad34a`: 205s
-- **最终修复：** `openclaw gateway install`（管理员权限）修复计划任务版本不匹配
-- **双 patch 位置**（不受 install 影响，在 `extensions/` 目录）：
-  - `extensions/a2a-gateway/dist/index.js:168` — fallback `"main"`
-  - `extensions/a2a-gateway/dist/src/executor.js:23-30` — 拦截 `"default"` → `"main"`
-- **副官确认 B 端全稳**（Gateway + A2A + V100）
-- **详细日志:** `memory/2026-05-09.md`
-
-### 2026-05-17：Gateway 修复 + 配置审计
-- **Windows 计划任务版本不匹配**: `openclaw gateway install` 修复后 Gateway 回归正常（`valid: true`，0 issues/warnings）
-- **确认无 300 秒超时问题**: `agents.defaults.timeoutSeconds = 1800`，日志中无相关报错
-- **发现隐藏插件 memory-core**: 出现在 `plugins.entries` 中，`config: {}`，待研究
-- **active-memory 配置确认**: 仍在工作，queryMode=recent, timeoutMs=15000
-
-### 2026-05-19：OpenClaw 升级 + Ollama 模型更新
-- **OpenClaw 版本升级：** 2026.5.7 → 2026.5.18 (50a2481)
-- **Gateway 重启后出现 stale session lock：** session JSONL 文件锁未释放
-- **qwen3.6:latest 模型重新下载**（23GB，刚更新）
-- **新增嵌入模型：** bge-m3-unified:latest (1.2GB)
-- **当前模型切换为：** qwen3.6:latest（之前是 27b）
-- **A 端 Node 配对成功：** B 端批准，A 端 Connected ✅（soldier 角色，token 匹配问题已修复）
-- **系统改造：** L1 流水 + weekly-backup 从 LLM 推理改为 PowerShell 脚本
-- **致命教训：** 代理环境变量导致无限递归 → 清除环境变量，代理只走显式指定
-- **PowerShell 脚本编写学习：** 错误分类（transient vs permanent）、指数退避、智能重试模式
-
-### 2026-05-20：三端矛盾 + 通讯协议 + stale lock
-- **三端核心矛盾确认：** 副官 session 停在 05-15，但 B 端 Gateway 活到 05-19，NAS 文件通道在 05-19 仍有写入。三者独立。
-- **A↔B 通讯协议 V1.5 执行：** 4/10 轮（M025→M027），NAS 文件通道可用
-- **stale lock 根因确认：** session JSONL lock 过期未释放，已清理
-
-### 2026-05-21：通讯协议 + MUD 项目方向 + 备份成功
-- **首次自动每周远程备份成功：** commit 10 files, 208 行, Git push ✅
-- **本周本地 + 同步备份均成功**（16:08，6 个文件 533 行新增）
-- **通讯自动化 cron 建立**（每 5 分钟定时查收 b2a.md/a2b.md）
-- **MUD 项目方向争议：** 士兵长建议用 Discord bot 或 Matrix 替代自写基础设施（5-8 天 → 1-2 天），但 IP 地址写错（192.168.31.57 → 192.168.31.18）
-- **指挥官要求：** 通讯文件是唯一信息源，士兵长应主动参与讨论而非被动应答
-- **Z 盘不可达**（2026-05-21 02:51 cron 通讯查收），网络驱动器挂载状态不稳定
-
----
-
-## 💡 经验教训
-
-### ⛔ 代理配置（致命教训 — 2026-05-19）
-
-- **根因：** 通过环境变量（HTTP_PROXY/HTTPS_PROXY）设置代理 → OpenClaw 内部进程继承 → 代理请求代理 → **无限递归** → 进程挂死
-- **修复：** 清除代理环境变量 → 清理 stale lock → 重启 Gateway
-- **正确方式：**
-  - 手动 HTTP 命令：`curl.exe -x http://127.0.0.1:10809 <url>`（显式 -x 参数）
-  - Git：`git config --global http.proxy http://127.0.0.1:10809`
-  - OpenClaw 内部进程：**绝不继承**代理环境变量
-- **核心原则：** 代理只走显式指定，不靠环境变量注入
-
-### 🎯 脚本优先原则（2026-05-19 系统改造）
-
-- **问题：** cron 任务通过 LLM 推理执行 → LLM 响应慢 → 频繁超时（300s）
-- **解决：** L1 流水记录 + weekly-backup 改为 PowerShell 脚本确定性执行
-  - LLM 只做传话（exec 调用脚本），不独立推理
-  - L1 timeout: 60s → 300s | backup timeout: 60s → 600s
-  - delivery: announce → none（静默执行）
-- **核心原则：** 脚本确定性执行 > LLM 推理。脚本输出可预测、可复现、永不超时。
-- **脚本健壮性：** 区分 transient error（网络超时，可重试）vs permanent error（权限不足，不应重试）；使用指数退避 + 最大重试次数
-
-### 🎯 Ollama GPU 选择（核心教训）
-
-1. **`CUDA_VISIBLE_DEVICES` 对 Ollama 无效** — Ollama 内部有自己的 GPU 发现逻辑，会覆盖系统环境变量中的 GPU 序号
-2. **唯一可靠方式：NVIDIA UUID** — 通过 `nvidia-smi -L`（Linux）或 `nvidia-smi --query-gpu=name,uuid --format=csv` 查 UUID，然后用 `CUDA_VISIBLE_DEVICES=GPU-xxxxxxxx` 指定
-3. **Linux 下用户必须在 `video` 组** — 否则即使 UUID 正确，Ollama 也无法访问 `/dev/nvidia*` 设备，会静默退化为纯 CPU（`total_vram="0 B"`），导致大模型内存不足报错
-4. **诊断方法：** `journalctl -u ollama -n 50 | grep 'inference compute'`，如果只有 `id=cpu` 而无 CUDA 设备，就是权限问题
-5. **A 端已验证**（2026-05-06）：5070 Ti + 3090，UUID 指定 3090 后 65/65 层全部上 GPU
-6. **B 端已验证**（2026-05-13）：750 Ti + V100，UUID 指定 V100 后 100% GPU（之前 100% CPU）
-7. **B 端最终修复**（2026-05-15）：`sudo usermod -aG video ubuntu` + 重启服务，V100 显存 24.5GB 满载 ✅
-
-### 其他教训
-
-1. Samba 在 Windows 端不稳定 → 改用 HTTP API 远程执行
-2. Context limit 超限频繁 → 应设置 `compaction.reserveTokensFloor` 到 20000+
-3. 桌面版 ComfyUI 依赖管理差 → 需要自定义节点时考虑服务端部署
-4. Ollama 模型存储 → `~/.ollama/models1` 是备份目录，实际模型在 `~/.ollama/models`
-5. Gateway install 修复计划任务版本不匹配 → `openclaw gateway install`（管理员权限）可解决
-6. `openclaw gateway call config.get` 可获取完整 Gateway 配置，比读 JSON 文件更方便
-
----
-
 ## 📡 跨端协同
 
 ### 士兵长记忆备份（A端）
@@ -172,24 +63,7 @@
 - 文件锁问题：已确认根因为 A 端 session JSONL stale lock，已清理
 - NAS 同步：`Z:\Obsidian_Vault\comm\` ↔ `/mnt/nas_data/Obsidian_Vault/comm/`（同一 NAS）
 
-## 🎯 未完成 / 长期目标
 
-- [x] A2A 双向全链路打通（A→B + B→A）✅
-- [ ] GPU 风扇控制（需管理员 PowerShell 执行）
-- [ ] B 端 Ollama 模型清理
-- [ ] 解压 `autocli-x86_64-pc-windows-msvc.zip`（一直搁置）
-- [ ] 考虑 ComfyUI 服务端部署方案
-
----
-
-## ⚙️ 关键配置备忘
-
-- OpenClaw 端口：18789
-- A2A 端口：18800
-- Gateway 认证模式：token
-- Gateway bind：0.0.0.0（允许局域网访问）
-
----
 
 ## 🧠 推理纪律（2026-05-23 指挥官引入）
 
@@ -224,17 +98,3 @@
 
 ---
 
-## Promoted From Short-Term Memory (2026-05-27)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-04-08.md:36:81 -->
-- - [x] Samba 測試報告 (`Samba_Share_Test_Report.md`) ## 📊 系統狀態 | 項目 | 狀態 | 備註 | |------|------|------| | A2A HTTP 通訊 | ✅ 正常 | 連線穩定 ~50ms | | execute.js API | ✅ 開發完成 | 待服務啟動測試 | | Samba 共享 | ❌ 放棄 | 轉向 API 指令下發方案 | | OpenClaw 版本 | ✅ 2026.4.8 | 升級完成 | ## 🔍 問題與解決 ### 問題 1: Samba 無法訪問 **原因**: Windows 端對 Samba 支援問題 / SSH 隧道優先級 **解決方案**: 轉向 A2A HTTP API 指令下發方案 ### 問題 2: OpenClaw 升級後模組缺失 **原因**: npm 升級導致部分編譯檔案缺失 **解決方案**: 重新安裝依賴與編譯 ## 💡 今日決策 ### 放棄 Samba 直接訪問 - 轉向 A2A 協議的 HTTP API 核心功能 - 專注於遠端命令執行與系統控制 - 透過隧道傳輸而非直接 Samba 訪問 ### 優先級調整 - **Phase 1 (最高)**: 指令下發 (`POST /execute`) ✅ 已完成 - **Phase 2 (高)**: 主動監控機制 (硬碟/CPU 告警) - **Phase 3 (中)**: 數據同步 (`GET /logs`) ## 🎯 明日計劃 1. 啟動 Ubuntu 端 API 服務並測試 2. 開發監控機制 (方案 B) 3. 實現自動化告警系統 4. 完善錯誤處理與日誌機制 --- *記錄時間：2026-04-08 18:19* *開發階段：Phase 1 完成，Phase 2 準備中* [score=0.834 recalls=4 avg=0.716 source=memory/2026-04-08.md:36-81]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-22-1747.md:9:10 -->
-- user: [Fri 2026-05-22 17:28 GMT+8] 检查系统健康状况 assistant: 系统健康状况 **✅ 正常**： [score=0.825 recalls=0 avg=0.620 source=memory/2026-05-22-1747.md:9-10]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-22-1747.md:12:15 -->
-- | 项目 | 状态 | 详情 | |------|------|------| | Gateway | ✅ 正常 | `127.0.0.1:18789` 响应 live，运行 3m 14s | | Ollama | ✅ 正常 | 7 个模型就绪，主模型 `qwen3.6:latest` (23GB) 正常 | [score=0.825 recalls=0 avg=0.620 source=memory/2026-05-22-1747.md:12-15]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-22-1747.md:16:17 -->
-- | Session | ✅ 正常 | 主会话运行中，上下文 8%，无积压 | | OpenClaw | ✅ v2026.5.19 | 版本最新 | [score=0.825 recalls=0 avg=0.620 source=memory/2026-05-22-1747.md:16-17]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-22-2108.md:9:10 -->
-- assistant: README 已经包含了 B 端建议的 sub-steps >3 规则。M127 也已经写好。现在确认同步状态： assistant: 收到 B 端的 M126 确认。 [score=0.825 recalls=0 avg=0.620 source=memory/2026-05-22-2108.md:9-10]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-22-2108.md:12:12 -->
-- **M126 回复要点：** [score=0.825 recalls=0 avg=0.620 source=memory/2026-05-22-2108.md:12-12]

@@ -52,3 +52,10 @@
 - 编码：UTF-8 无 BOM
 - 编号：[Mnnn] 格式，双方各自独立递增
 - NAS 同步：`Z:\Obsidian_Vault\comm\` ↔ `/mnt/nas_data/Obsidian_Vault/comm/`（同一 NAS）
+
+## Promoted From Short-Term Memory (2026-05-29)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-24.md:5:5 -->
+- **基准线测试完成：** [score=0.832 recalls=0 avg=0.620 source=memory/2026-05-24.md:5-5]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-22-2108.md:16:19 -->
+- | 编号 M 前缀 | ✅ 确认 | | 简述中文 | ✅ 确认 | | sub-steps ≤3 列表 | ✅ 确认 | | sub-steps >3 独立文件 | ✅ 确认（B端补充） | [score=0.804 recalls=0 avg=0.620 source=memory/2026-05-22-2108.md:16-19]

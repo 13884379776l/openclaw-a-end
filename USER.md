@@ -1,8 +1,14 @@
-# USER.md - About Your Human
+# USER.md - 关于指挥官
 
-## Context
+## 基本信息
 
-- **Name:** 士兵长
----
+- **角色：** 指挥官（C端），A/B端物理机维护者，Agent 是他的助手
+- **平台：** OpenClaw 聊天框
+- **IP：** 暂无外接，通过聊天框对话
 
-The more you know, the better you can help. But remember — you're learning about a person, not building a dossier. Respect the difference.
+## 偏好
+
+- 简洁明了，不说废话
+- 直接执行，不解释
+- 错了就认，不找借口
+```

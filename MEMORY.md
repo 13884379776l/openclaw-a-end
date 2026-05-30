@@ -59,3 +59,22 @@
 - **基准线测试完成：** [score=0.832 recalls=0 avg=0.620 source=memory/2026-05-24.md:5-5]
 <!-- openclaw-memory-promotion:memory:memory/2026-05-22-2108.md:16:19 -->
 - | 编号 M 前缀 | ✅ 确认 | | 简述中文 | ✅ 确认 | | sub-steps ≤3 列表 | ✅ 确认 | | sub-steps >3 独立文件 | ✅ 确认（B端补充） | [score=0.804 recalls=0 avg=0.620 source=memory/2026-05-22-2108.md:16-19]
+
+## Promoted From Short-Term Memory (2026-05-30)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2223.md:9:12 -->
+- user: [Mon 2026-05-25 21:52 GMT+8] 你可以让B转达 user: [OpenClaw heartbeat poll] assistant: [assistant turn failed before producing content] user: [OpenClaw heartbeat poll] [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2223.md:9-12]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2223.md:13:14 -->
+- user: [Mon 2026-05-25 22:11 GMT+8] 哈喽，重启就搞定了， assistant: 哈喽指挥官！🔥 [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2223.md:13-14]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2223.md:16:16 -->
+- 3 张显卡都搞定了？那就太好了，运气不错。 [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2223.md:16-16]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2223.md:18:21 -->
+- 我来做个快速巡检确认环境状态： assistant: | 项目 | 状态 | |------|------| | Gateway | live ✅ | [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2223.md:18-21]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2223.md:22:22 -->
+- | Ollama qwen3.6:latest | 在线 ✅（23GB） | [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2223.md:22-22]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2248.md:9:12 -->
+- user: [Mon 2026-05-25 22:29 GMT+8] 按照这个 assistant: [assistant turn failed before producing content] user: [Mon 2026-05-25 22:29 GMT+8] 按照这个 assistant: 指挥官，5070 Ti 那句断掉了——你是说"性能损失极小"吗？ [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2248.md:9-12]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2248.md:16:19 -->
+- | 显卡 | 当前上限 | 目标 | 降幅 | |---|---|---|---| | 3090 | 380W | **300W** | -80W | | 5070 Ti | 300W | **250W** | -50W | [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2248.md:16-19]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2248.md:25:25 -->
+- assistant: 指挥官，5070 Ti 那句断掉了——你是说"性能损失极小"吗？ [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2248.md:25-25]

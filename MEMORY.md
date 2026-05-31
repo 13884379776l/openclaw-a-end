@@ -78,3 +78,12 @@
 - | 显卡 | 当前上限 | 目标 | 降幅 | |---|---|---|---| | 3090 | 380W | **300W** | -80W | | 5070 Ti | 300W | **250W** | -50W | [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2248.md:16-19]
 <!-- openclaw-memory-promotion:memory:memory/2026-05-25-2248.md:25:25 -->
 - assistant: 指挥官，5070 Ti 那句断掉了——你是说"性能损失极小"吗？ [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2248.md:25-25]
+
+## Promoted From Short-Term Memory (2026-05-31)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-08.md:69:83 -->
+- - **Phase 3 (中)**: 數據同步 (`GET /logs`) ## 🎯 明日計劃 1. 啟動 Ubuntu 端 API 服務並測試 2. 開發監控機制 (方案 B) 3. 實現自動化告警系統 4. 完善錯誤處理與日誌機制 --- *記錄時間：2026-04-08 18:19* *開發階段：Phase 1 完成，Phase 2 準備中* *狀態：系統穩定，等待 API 測試* [score=0.847 recalls=4 avg=0.726 source=memory/2026-04-08.md:69-83]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-05.md:288:304 -->
+- - Agent Card URL: http://localhost:18800/.well-known/agent-card.json - 技能: [`chat`](Bridge chat/messages to OpenClaw agents) - 能力: 支持流式传输 (streaming: true) **对等节点配置**: 默认空数组（尚未配置对等节点） **下一步**: 1. 生成安全令牌并分享给对等节点 2. 配置对等节点进行双向通信 3. 测试 A2A 消息传递功能 4. 考虑配置审计日志收集 **安全令牌**: `392773adde574f3e8f7b73584f5d10a258ebdfb9edd3975b` **插件路径**: `C:\Users\48856\.openclaw\workspace\openclaw-a2a-gateway` **安装方式**: git clone (npm 包不可用) [score=0.835 recalls=4 avg=0.719 source=memory/2026-04-05.md:288-304]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-27.md:5:5 -->
+- 当前时间 01:07，凌晨静默时段，指挥官离线。执行例行检查。 [score=0.835 recalls=0 avg=0.620 source=memory/2026-05-27.md:5-5]

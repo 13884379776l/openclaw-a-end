@@ -87,3 +87,8 @@
 - - Agent Card URL: http://localhost:18800/.well-known/agent-card.json - 技能: [`chat`](Bridge chat/messages to OpenClaw agents) - 能力: 支持流式传输 (streaming: true) **对等节点配置**: 默认空数组（尚未配置对等节点） **下一步**: 1. 生成安全令牌并分享给对等节点 2. 配置对等节点进行双向通信 3. 测试 A2A 消息传递功能 4. 考虑配置审计日志收集 **安全令牌**: `392773adde574f3e8f7b73584f5d10a258ebdfb9edd3975b` **插件路径**: `C:\Users\48856\.openclaw\workspace\openclaw-a2a-gateway` **安装方式**: git clone (npm 包不可用) [score=0.835 recalls=4 avg=0.719 source=memory/2026-04-05.md:288-304]
 <!-- openclaw-memory-promotion:memory:memory/2026-05-27.md:5:5 -->
 - 当前时间 01:07，凌晨静默时段，指挥官离线。执行例行检查。 [score=0.835 recalls=0 avg=0.620 source=memory/2026-05-27.md:5-5]
+
+## Promoted From Short-Term Memory (2026-06-01)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-27.md:24:24 -->
+- </content> [score=0.818 recalls=0 avg=0.620 source=memory/2026-05-27.md:24-24]

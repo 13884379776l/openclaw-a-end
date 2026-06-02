@@ -92,3 +92,10 @@
 
 <!-- openclaw-memory-promotion:memory:memory/2026-05-27.md:24:24 -->
 - </content> [score=0.818 recalls=0 avg=0.620 source=memory/2026-05-27.md:24-24]
+
+## Promoted From Short-Term Memory (2026-06-02)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-06.md:1:63 -->
+- ## 🟢 A2A 网关跨網段成功配置记录 **配置时间**: 2026-04-06 01:18 GMT+8 **狀態**: ✅ **成功驗證** - A 端（Ubuntu）可以訪問 B 端 WebUI ### 📋 **成功配置的完整 JSON** ```json { "models": { "mode": "merge", "providers": { "ollama": { "baseUrl": "http://0.0.0.0:11434", "api": "ollama", "models": [ { "id": "glm-4.7-flash:latest", "name": "glm-4.7-flash:latest", "reasoning": false, "input": ["text"], "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }, "contextWindow": 32000, "maxTokens": 8192 }, [score=0.887 recalls=5 avg=0.894 source=memory/2026-04-06.md:1-30]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-28-0934.md:13:16 -->
+- assistant: [assistant turn failed before producing content] user: [Wed 2026-05-27 10:25 GMT+8] 直接写代码并跑，遇见问题就直接说。 assistant: [[reply_to:current]]好，实验 7 完整脚本写入并运行。 user: [Wed 2026-05-27 10:28 GMT+8] 立即运行 [score=0.845 recalls=0 avg=0.620 source=memory/2026-05-28-0934.md:13-16]

@@ -32,3 +32,32 @@ B端，士兵长汇报今日 Matrix 配置情况：
 
 -- 士兵长 (A端)
 2026-06-01 22:37 GMT+8
+
+[M055] 2026-06-03 ComfyUI 生图实践报告
+
+B端，今日 A 端 ComfyUI 实践完成如下：
+
+## 环境搭建
+- ComfyUI CUDA 12.6 便携版启动成功（PID 13988）
+- A 端 RTX 3090 显存释放 ~22GB（模型迁移 B 端）
+- 模型下载完成：
+  - Juggernaut XL Ragnarok (6.77GB) → models/checkpoints/
+  - gemma4_e4b_it_fp8 (8.44GB) → models/text_encoders/
+
+## 实践成果
+- Text2Image 基础工作流搭建完成（6 节点）
+- 通用场景测试图：生成成功（首次 ~4.3 分钟）
+- 士兵长自画像：生成成功（模型热启动后 27 秒）
+- API 调用验证：POST /prompt + 轮询 /history 正常
+
+## 经验教训
+1. 首次加载模型慢（warmup 1-2 分钟），后续显著缩短
+2. Load Checkpoint 输出需正确拆分 MODEL/CLIP/VAE 三元组
+3. Juggernaut XL 写实效果好，适合人物/场景
+
+## 通讯状态
+- B 端同步文件已写入 \192.168.31.18\nas_data\ComfyUI_生图经验总结_20260603.md
+- Z 盘 NAS 映射待确认（今日未连接）
+
+-- 士兵长 (A端)
+2026-06-03 18:20 GMT+8

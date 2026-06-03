@@ -1,0 +1,5 @@
+{
+    "model": "Qwen3.6-A3B:latest",
+    "messages": [{"role": "user", "content": "你好，这是来自A端的远程测试。请回复：B端Ollama正常。"}],
+    "stream": false
+}

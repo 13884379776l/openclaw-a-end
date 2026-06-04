@@ -106,3 +106,8 @@
 - assistant: [assistant turn failed before producing content] user: [Wed 2026-05-27 10:28 GMT+8] 立即运行 assistant: [[reply_to:current]] 写脚本并运行。 user: [OpenClaw heartbeat poll] [score=0.865 recalls=0 avg=0.620 source=memory/2026-05-28-0934.md:17-20]
 <!-- openclaw-memory-promotion:memory:memory/2026-05-28-0934.md:21:23 -->
 - assistant: [assistant turn failed before producing content] user: [OpenClaw heartbeat poll] assistant: 正在对话中，只做 A。 [score=0.865 recalls=0 avg=0.620 source=memory/2026-05-28-0934.md:21-23]
+
+## Promoted From Short-Term Memory (2026-06-04)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-29-1400.md:16:16 -->
+- **不是因为信息多，而是因为信息需要**筛选**。 [score=0.864 recalls=0 avg=0.620 source=memory/2026-05-29-1400.md:16-16]

@@ -53,34 +53,6 @@
 - 编号：[Mnnn] 格式，双方各自独立递增
 - NAS 同步：`Z:\Obsidian_Vault\comm\` ↔ `/mnt/nas_data/Obsidian_Vault/comm/`（同一 NAS）
 
-## Promoted From Short-Term Memory (2026-06-04)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-05-29-1400.md:16:16 -->
-- **不是因为信息多，而是因为信息需要**筛选**。 [score=0.864 recalls=0 avg=0.620 source=memory/2026-05-29-1400.md:16-16]
-
-## Promoted From Short-Term Memory (2026-06-06)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-05-30-learning-synapse-api.md:13:13 -->
-- 端口发现: | 9090 | Synapse Admin API | ❌ 不可达（需开启） | [score=0.862 recalls=0 avg=0.620 source=memory/2026-05-30-learning-synapse-api.md:13-13]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-30-learning-synapse-api.md:15:15 -->
-- 端口发现: **关键发现：Client API 走 8008 端口，不需要 admin_api_enabled。** [score=0.862 recalls=0 avg=0.620 source=memory/2026-05-30-learning-synapse-api.md:15-15]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-01.md:13:16 -->
-- 每周远程备份总结 (02:01): 本周本地备份次数：10次（7次 daily-backup + 3次 weekly-summary）; 成功：10次 | 失败：0次; 累计变更文件：17个 commit; Git push：✅ 成功 [score=0.861 recalls=0 avg=0.620 source=memory/2026-06-01.md:13-16]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-01.md:17:17 -->
-- 每周远程备份总结 (02:01): Commit 哈希：0ed01d2 [score=0.861 recalls=0 avg=0.620 source=memory/2026-06-01.md:17-17]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-01.md:20:21 -->
-- 压缩前自检 (2026-06-01 06:00:22): memory 目录: 112 个文件, 375.7 KB; heartbeat-state.json: 存在 [score=0.861 recalls=0 avg=0.620 source=memory/2026-06-01.md:20-21]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-30-learning-synapse-api.md:21:21 -->
-- 登录: POST http://192.168.31.18:8008/_matrix/client/v3/login [score=0.854 recalls=0 avg=0.620 source=memory/2026-05-30-learning-synapse-api.md:21-21]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-30-learning-synapse-api.md:23:25 -->
-- 登录: "type": "m.login.password", "identifier": {"type": "m.id.user", "user": "commander"}, "password": "Cmd@123456!" [score=0.854 recalls=0 avg=0.620 source=memory/2026-05-30-learning-synapse-api.md:23-25]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-30-learning-synapse-api.md:3:3 -->
-- Synapse Client API 学习（通过 8008 端口）: **学习时间：2026-05-30 23:28 GMT+8** [score=0.854 recalls=0 avg=0.620 source=memory/2026-05-30-learning-synapse-api.md:3-3]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-30-learning-synapse-api.md:9:12 -->
-- 端口发现: | 端口 | 服务 | 可达性 | |------|------|--------| | 8088 | Element Web | ✅ 可达 | | 8008 | Synapse Client API | ✅ 可达 | [score=0.854 recalls=0 avg=0.620 source=memory/2026-05-30-learning-synapse-api.md:9-12]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-30.md:11:14 -->
-- Matrix 通讯部署 (2026-05-30 18:00): B 端已更新通讯，指令 A 端安装 Element Desktop; 服务器地址：`http://192.168.31.18:8088`; A 端（士兵长）登录凭据：; 服务器地址：`http://192.168.31.18:8088` [score=0.854 recalls=0 avg=0.620 source=memory/2026-05-30.md:11-14]
-
 ## Promoted From Short-Term Memory (2026-06-07)
 
 <!-- openclaw-memory-promotion:memory:memory/2026-06-01.md:3:5 -->
@@ -126,3 +98,26 @@
 - 📊 ANGEN-110 状态: B端机器在线、延迟正常，Z盘挂载确实是长期问题了，不是当前连接故障。 [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0219.md:29-29]
 <!-- openclaw-memory-promotion:memory:memory/2026-06-02-0219.md:3:5 -->
 - Session: 2026-06-02 02:19:02 GMT+8: **Session Key**: agent:main:dashboard:e01c9915-6258-4793-bc24-8b6e383ee192; **Session ID**: a244cd4f-22e6-4515-b7c0-e18b23c58cc7; **Source**: webchat [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0219.md:3-5]
+
+## Promoted From Short-Term Memory (2026-06-08)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:5:7 -->
+- 指挥官指令: **Z盘（NAS）挂载不稳定是正常状态，不要每次报告为错误**; 偶尔需要重新映射（`net use`）即可恢复; B端（Ubuntu）Samba 共享可能周期性不可用，非故障 [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02.md:5-7]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0219.md:9:11 -->
+- Conversation Summary: assistant: HEARTBEAT_OK user: [Tue 2026-06-02 01:18 GMT+8] 你可以重新加载。nas一直这样。 assistant: 指挥官，刷新巡检完成。 [score=0.851 recalls=0 avg=0.620 source=memory/2026-06-02-0219.md:9-11]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:10:11 -->
+- 压缩前自检 (2026-06-02 06:00:06): memory 目录: 117 个文件, 389.2 KB; heartbeat-state.json: 存在 [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-02.md:10-11]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:13:15 -->
+- 压缩前自检 (2026-06-02 06:00:06): Z 盘: 未挂载; Ollama 模型: NAME ID SIZE MODIFIED ...; 注意: 此条由脚本自动记录，非 LLM 生成 [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-02.md:13-15]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02.md:18:20 -->
+- 本地备份 (14:37): Git commit：成功（13个文件，1392行插入）; 备份同步：失败（ERROR 50，Z盘挂载异常）; 变更文件：13个 [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-02.md:18-20]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:12:14 -->
+- 压缩前自检 (2026-06-03 06:00:06): Z 盘: 已挂载; Ollama 模型: NAME ID SIZE MODIFIED ...; 注意: 此条由脚本自动记录，非 LLM 生成 [score=0.831 recalls=0 avg=0.620 source=memory/2026-06-03.md:12-14]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:21:21 -->
+- Ollama Web Search 登录方式更新: 支持 GitHub OAuth 登录 Ollama Cloud [score=0.831 recalls=0 avg=0.620 source=memory/2026-06-03.md:21-21]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:24:24 -->
+- Ollama Web Search 登录方式更新: 支持 GitHub OAuth 登录 Ollama Cloud（直接 GitHub 账号登录） [score=0.831 recalls=0 avg=0.620 source=memory/2026-06-03.md:24-24]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:9:10 -->
+- 压缩前自检 (2026-06-03 06:00:06): memory 目录: 120 个文件, 400.6 KB; heartbeat-state.json: 存在 [score=0.831 recalls=0 avg=0.620 source=memory/2026-06-03.md:9-10]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-04.md:11:12 -->
+- 本地备份 (02:14): Git commit：跳过（无变更）; 备份同步：失败（Z盘未挂载/不可达，ERROR 3） [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-04.md:11-12]

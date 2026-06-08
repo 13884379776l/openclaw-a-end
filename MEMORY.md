@@ -53,29 +53,6 @@
 - 编号：[Mnnn] 格式，双方各自独立递增
 - NAS 同步：`Z:\Obsidian_Vault\comm\` ↔ `/mnt/nas_data/Obsidian_Vault/comm/`（同一 NAS）
 
-## Promoted From Short-Term Memory (2026-06-07)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-06-01.md:3:5 -->
-- 本地备份 (13:53): Git commit：成功（13 个文件变更）; 备份同步：失败（Z: 盘属性设置错误）; 变更文件：13 个 [score=0.870 recalls=0 avg=0.620 source=memory/2026-06-01.md:3-5]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:4:6 -->
-- 本地备份 (02:14): Git commit：成功（7 个文件，479 行新增）; 备份同步：失败（Z 盘 ERROR 50：不支持文件属性操作，可能为网络挂载/特殊卷）; 变更文件：7 个 [score=0.863 recalls=0 avg=0.620 source=memory/2026-06-03.md:4-6]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0018.md:13:14 -->
-- Conversation Summary: assistant: 找到了！昨天的学习记录里有关键发现。让我查看： assistant: 指挥官，昨天的记录找到了： [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0018.md:13-14]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0018.md:16:16 -->
-- Conversation Summary: **5月30-31日士兵长的学习成果：** [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0018.md:16-16]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0018.md:17:20 -->
-- Conversation Summary: 通过 Synapse Client API（8008端口）成功登录 commander 账户; 发现 3 个房间，包括 `!WXyqvGnGVJGsgSODSR`（三端实时通讯）; 写了 `matrix-bridge.ps1` 脚本作为手动桥接方案; 待验证：Client API 发送消息 [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0018.md:17-20]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0018.md:3:5 -->
-- Session: 2026-06-02 00:18:04 GMT+8: **Session Key**: agent:main:dashboard:537e8fe5-09e6-4c19-8f9b-b3bb39b13c31; **Session ID**: 2506a857-c2f3-46fa-b313-df859924139d; **Source**: webchat [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0018.md:3-5]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0018.md:9:12 -->
-- Conversation Summary: assistant: 指挥官批评得对。我查通讯日志，看看昨天记录了什么。 assistant: 找到了，昨天写过一个手动矩阵桥接脚本。继续翻昨天的通讯记录： assistant: 指挥官说得对，我一直在重复查同一个问题。昨天写的记录在哪里？让我直接看昨天的日志和通讯通道。 assistant: 找到了。昨天（5月31日）的学习日志显示了一个关键发现： [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0018.md:9-12]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0116.md:14:17 -->
-- Conversation Summary: | 项目 | 状态 | 详情 | |------|------|------| | **Gateway** | ✅ 在线 | 运行 2m 17s | | **Ollama** | ✅ 在线 | 6 个模型就绪 | [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0116.md:14-17]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0116.md:18:21 -->
-- Conversation Summary: | **主模型** | ✅ qwen3.6:latest | 23GB | | **CPU** | ✅ 正常 | 负载 20% | | **内存** | ✅ 充裕 | 52.2 / 64.9 GB (80.5% 空闲) | | **C盘** | ✅ 充足 | 625.5 GB 可用 (67.2%) | [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0116.md:18-21]
-<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0116.md:22:24 -->
-- Conversation Summary: | **GPU 3090** | ✅ 正常 | 40°C，6.8W，空闲 | | **GPU 5070 Ti** | ✅ 正常 | 45°C，8.4W，空闲 | | **Cron** | ✅ 7 个任务 | 下次唤醒 00:59 | [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0116.md:22-24]
-
 ## Promoted From Short-Term Memory (2026-06-08)
 
 <!-- openclaw-memory-promotion:memory:memory/2026-06-02-0018.md:22:22 -->
@@ -121,3 +98,26 @@
 - 压缩前自检 (2026-06-03 06:00:06): memory 目录: 120 个文件, 400.6 KB; heartbeat-state.json: 存在 [score=0.831 recalls=0 avg=0.620 source=memory/2026-06-03.md:9-10]
 <!-- openclaw-memory-promotion:memory:memory/2026-06-04.md:11:12 -->
 - 本地备份 (02:14): Git commit：跳过（无变更）; 备份同步：失败（Z盘未挂载/不可达，ERROR 3） [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-04.md:11-12]
+
+## Promoted From Short-Term Memory (2026-06-09)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-06-04.md:16:17 -->
+- 本地备份 (02:41): Git commit：成功（1个文件）; 备份同步：失败（Z盘未挂载，ERROR 3路径不存在） [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-04.md:16-17]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-04.md:3:6 -->
+- 每周远程备份总结 (02:00): 本周（05/28-06/03）本地备份次数：8次; 成功：5次 | 失败：3次; 累计变更文件：41个（含本次）; Git push：✅ 成功 [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-04.md:3-6]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-04.md:7:8 -->
+- 每周远程备份总结 (02:00): Commit 哈希：bb437cf; 备注：Z盘同步ERROR 50问题持续存在，为SMB网络共享兼容性问题，已忽略。仅06-01备份成功同步Z盘。 [score=0.834 recalls=0 avg=0.620 source=memory/2026-06-04.md:7-8]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-04-1650.md:13:13 -->
+- Conversation Summary: assistant: 指挥官，客观分析： [score=0.831 recalls=0 avg=0.620 source=memory/2026-06-04-1650.md:13-13]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-04-1650.md:16:18 -->
+- Conversation Summary: **MoE架构合理** — 35B总参数但每次只激活~3B，低显存运行是可信的; **6GB显存能跑** — IQ2_M量化约400MB+KV缓存，6G足够; **模型来源** — HauhauCS在HuggingFace上的非官方微调版本 [score=0.831 recalls=0 avg=0.620 source=memory/2026-06-04-1650.md:16-18]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-04-1650.md:3:5 -->
+- Session: 2026-06-04 16:50:06 GMT+8: **Session Key**: agent:main:main; **Session ID**: c2989cb1-513f-4fa3-83f9-3524af09fc82; **Source**: webchat [score=0.831 recalls=0 avg=0.620 source=memory/2026-06-04-1650.md:3-5]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-04-1650.md:15:15 -->
+- Conversation Summary: **技术层面：** [score=0.821 recalls=0 avg=0.620 source=memory/2026-06-04-1650.md:15-15]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-04-1650.md:9:12 -->
+- Conversation Summary: assistant: HEARTBEAT_OK user: [OpenClaw heartbeat poll] assistant: 系统正常，无待办事项。随时待命。 user: https://www.freedidi.com/24284.html 你怎么看？ [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-04-1650.md:9-12]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-04.md:21:22 -->
+- 压缩前自检 (2026-06-04 06:00:09): memory 目录: 121 个文件, 404.1 KB; heartbeat-state.json: 存在 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-04.md:21-22]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-04.md:24:26 -->
+- 压缩前自检 (2026-06-04 06:00:09): Z 盘: 未挂载; Ollama 模型: NAME ID SIZE MODIFIED ...; 注意: 此条由脚本自动记录，非 LLM 生成 [score=0.812 recalls=0 avg=0.620 source=memory/2026-06-04.md:24-26]

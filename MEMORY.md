@@ -53,61 +53,76 @@
 - 编号：[Mnnn] 格式，双方各自独立递增
 - NAS 同步：`Z:\Obsidian_Vault\comm\` ↔ `/mnt/nas_data/Obsidian_Vault/comm/`（同一 NAS）
 
-## Promoted From Short-Term Memory (2026-05-29)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-05-24.md:5:5 -->
-- **基准线测试完成：** [score=0.832 recalls=0 avg=0.620 source=memory/2026-05-24.md:5-5]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-22-2108.md:16:19 -->
-- | 编号 M 前缀 | ✅ 确认 | | 简述中文 | ✅ 确认 | | sub-steps ≤3 列表 | ✅ 确认 | | sub-steps >3 独立文件 | ✅ 确认（B端补充） | [score=0.804 recalls=0 avg=0.620 source=memory/2026-05-22-2108.md:16-19]
-
-## Promoted From Short-Term Memory (2026-05-30)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2223.md:9:12 -->
-- user: [Mon 2026-05-25 21:52 GMT+8] 你可以让B转达 user: [OpenClaw heartbeat poll] assistant: [assistant turn failed before producing content] user: [OpenClaw heartbeat poll] [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2223.md:9-12]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2223.md:13:14 -->
-- user: [Mon 2026-05-25 22:11 GMT+8] 哈喽，重启就搞定了， assistant: 哈喽指挥官！🔥 [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2223.md:13-14]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2223.md:16:16 -->
-- 3 张显卡都搞定了？那就太好了，运气不错。 [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2223.md:16-16]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2223.md:18:21 -->
-- 我来做个快速巡检确认环境状态： assistant: | 项目 | 状态 | |------|------| | Gateway | live ✅ | [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2223.md:18-21]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2223.md:22:22 -->
-- | Ollama qwen3.6:latest | 在线 ✅（23GB） | [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2223.md:22-22]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2248.md:9:12 -->
-- user: [Mon 2026-05-25 22:29 GMT+8] 按照这个 assistant: [assistant turn failed before producing content] user: [Mon 2026-05-25 22:29 GMT+8] 按照这个 assistant: 指挥官，5070 Ti 那句断掉了——你是说"性能损失极小"吗？ [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2248.md:9-12]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2248.md:16:19 -->
-- | 显卡 | 当前上限 | 目标 | 降幅 | |---|---|---|---| | 3090 | 380W | **300W** | -80W | | 5070 Ti | 300W | **250W** | -50W | [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2248.md:16-19]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-25-2248.md:25:25 -->
-- assistant: 指挥官，5070 Ti 那句断掉了——你是说"性能损失极小"吗？ [score=0.813 recalls=0 avg=0.620 source=memory/2026-05-25-2248.md:25-25]
-
-## Promoted From Short-Term Memory (2026-05-31)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-04-08.md:69:83 -->
-- - **Phase 3 (中)**: 數據同步 (`GET /logs`) ## 🎯 明日計劃 1. 啟動 Ubuntu 端 API 服務並測試 2. 開發監控機制 (方案 B) 3. 實現自動化告警系統 4. 完善錯誤處理與日誌機制 --- *記錄時間：2026-04-08 18:19* *開發階段：Phase 1 完成，Phase 2 準備中* *狀態：系統穩定，等待 API 測試* [score=0.847 recalls=4 avg=0.726 source=memory/2026-04-08.md:69-83]
-<!-- openclaw-memory-promotion:memory:memory/2026-04-05.md:288:304 -->
-- - Agent Card URL: http://localhost:18800/.well-known/agent-card.json - 技能: [`chat`](Bridge chat/messages to OpenClaw agents) - 能力: 支持流式传输 (streaming: true) **对等节点配置**: 默认空数组（尚未配置对等节点） **下一步**: 1. 生成安全令牌并分享给对等节点 2. 配置对等节点进行双向通信 3. 测试 A2A 消息传递功能 4. 考虑配置审计日志收集 **安全令牌**: `392773adde574f3e8f7b73584f5d10a258ebdfb9edd3975b` **插件路径**: `C:\Users\48856\.openclaw\workspace\openclaw-a2a-gateway` **安装方式**: git clone (npm 包不可用) [score=0.835 recalls=4 avg=0.719 source=memory/2026-04-05.md:288-304]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-27.md:5:5 -->
-- 当前时间 01:07，凌晨静默时段，指挥官离线。执行例行检查。 [score=0.835 recalls=0 avg=0.620 source=memory/2026-05-27.md:5-5]
-
-## Promoted From Short-Term Memory (2026-06-01)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-05-27.md:24:24 -->
-- </content> [score=0.818 recalls=0 avg=0.620 source=memory/2026-05-27.md:24-24]
-
-## Promoted From Short-Term Memory (2026-06-02)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-04-06.md:1:63 -->
-- ## 🟢 A2A 网关跨網段成功配置记录 **配置时间**: 2026-04-06 01:18 GMT+8 **狀態**: ✅ **成功驗證** - A 端（Ubuntu）可以訪問 B 端 WebUI ### 📋 **成功配置的完整 JSON** ```json { "models": { "mode": "merge", "providers": { "ollama": { "baseUrl": "http://0.0.0.0:11434", "api": "ollama", "models": [ { "id": "glm-4.7-flash:latest", "name": "glm-4.7-flash:latest", "reasoning": false, "input": ["text"], "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }, "contextWindow": 32000, "maxTokens": 8192 }, [score=0.887 recalls=5 avg=0.894 source=memory/2026-04-06.md:1-30]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-28-0934.md:13:16 -->
-- assistant: [assistant turn failed before producing content] user: [Wed 2026-05-27 10:25 GMT+8] 直接写代码并跑，遇见问题就直接说。 assistant: [[reply_to:current]]好，实验 7 完整脚本写入并运行。 user: [Wed 2026-05-27 10:28 GMT+8] 立即运行 [score=0.845 recalls=0 avg=0.620 source=memory/2026-05-28-0934.md:13-16]
-
-## Promoted From Short-Term Memory (2026-06-03)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-05-28-0934.md:17:20 -->
-- assistant: [assistant turn failed before producing content] user: [Wed 2026-05-27 10:28 GMT+8] 立即运行 assistant: [[reply_to:current]] 写脚本并运行。 user: [OpenClaw heartbeat poll] [score=0.865 recalls=0 avg=0.620 source=memory/2026-05-28-0934.md:17-20]
-<!-- openclaw-memory-promotion:memory:memory/2026-05-28-0934.md:21:23 -->
-- assistant: [assistant turn failed before producing content] user: [OpenClaw heartbeat poll] assistant: 正在对话中，只做 A。 [score=0.865 recalls=0 avg=0.620 source=memory/2026-05-28-0934.md:21-23]
-
 ## Promoted From Short-Term Memory (2026-06-04)
 
 <!-- openclaw-memory-promotion:memory:memory/2026-05-29-1400.md:16:16 -->
 - **不是因为信息多，而是因为信息需要**筛选**。 [score=0.864 recalls=0 avg=0.620 source=memory/2026-05-29-1400.md:16-16]
+
+## Promoted From Short-Term Memory (2026-06-06)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-30-learning-synapse-api.md:13:13 -->
+- 端口发现: | 9090 | Synapse Admin API | ❌ 不可达（需开启） | [score=0.862 recalls=0 avg=0.620 source=memory/2026-05-30-learning-synapse-api.md:13-13]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-30-learning-synapse-api.md:15:15 -->
+- 端口发现: **关键发现：Client API 走 8008 端口，不需要 admin_api_enabled。** [score=0.862 recalls=0 avg=0.620 source=memory/2026-05-30-learning-synapse-api.md:15-15]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-01.md:13:16 -->
+- 每周远程备份总结 (02:01): 本周本地备份次数：10次（7次 daily-backup + 3次 weekly-summary）; 成功：10次 | 失败：0次; 累计变更文件：17个 commit; Git push：✅ 成功 [score=0.861 recalls=0 avg=0.620 source=memory/2026-06-01.md:13-16]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-01.md:17:17 -->
+- 每周远程备份总结 (02:01): Commit 哈希：0ed01d2 [score=0.861 recalls=0 avg=0.620 source=memory/2026-06-01.md:17-17]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-01.md:20:21 -->
+- 压缩前自检 (2026-06-01 06:00:22): memory 目录: 112 个文件, 375.7 KB; heartbeat-state.json: 存在 [score=0.861 recalls=0 avg=0.620 source=memory/2026-06-01.md:20-21]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-30-learning-synapse-api.md:21:21 -->
+- 登录: POST http://192.168.31.18:8008/_matrix/client/v3/login [score=0.854 recalls=0 avg=0.620 source=memory/2026-05-30-learning-synapse-api.md:21-21]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-30-learning-synapse-api.md:23:25 -->
+- 登录: "type": "m.login.password", "identifier": {"type": "m.id.user", "user": "commander"}, "password": "Cmd@123456!" [score=0.854 recalls=0 avg=0.620 source=memory/2026-05-30-learning-synapse-api.md:23-25]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-30-learning-synapse-api.md:3:3 -->
+- Synapse Client API 学习（通过 8008 端口）: **学习时间：2026-05-30 23:28 GMT+8** [score=0.854 recalls=0 avg=0.620 source=memory/2026-05-30-learning-synapse-api.md:3-3]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-30-learning-synapse-api.md:9:12 -->
+- 端口发现: | 端口 | 服务 | 可达性 | |------|------|--------| | 8088 | Element Web | ✅ 可达 | | 8008 | Synapse Client API | ✅ 可达 | [score=0.854 recalls=0 avg=0.620 source=memory/2026-05-30-learning-synapse-api.md:9-12]
+<!-- openclaw-memory-promotion:memory:memory/2026-05-30.md:11:14 -->
+- Matrix 通讯部署 (2026-05-30 18:00): B 端已更新通讯，指令 A 端安装 Element Desktop; 服务器地址：`http://192.168.31.18:8088`; A 端（士兵长）登录凭据：; 服务器地址：`http://192.168.31.18:8088` [score=0.854 recalls=0 avg=0.620 source=memory/2026-05-30.md:11-14]
+
+## Promoted From Short-Term Memory (2026-06-07)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-06-01.md:3:5 -->
+- 本地备份 (13:53): Git commit：成功（13 个文件变更）; 备份同步：失败（Z: 盘属性设置错误）; 变更文件：13 个 [score=0.870 recalls=0 avg=0.620 source=memory/2026-06-01.md:3-5]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:4:6 -->
+- 本地备份 (02:14): Git commit：成功（7 个文件，479 行新增）; 备份同步：失败（Z 盘 ERROR 50：不支持文件属性操作，可能为网络挂载/特殊卷）; 变更文件：7 个 [score=0.863 recalls=0 avg=0.620 source=memory/2026-06-03.md:4-6]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0018.md:13:14 -->
+- Conversation Summary: assistant: 找到了！昨天的学习记录里有关键发现。让我查看： assistant: 指挥官，昨天的记录找到了： [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0018.md:13-14]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0018.md:16:16 -->
+- Conversation Summary: **5月30-31日士兵长的学习成果：** [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0018.md:16-16]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0018.md:17:20 -->
+- Conversation Summary: 通过 Synapse Client API（8008端口）成功登录 commander 账户; 发现 3 个房间，包括 `!WXyqvGnGVJGsgSODSR`（三端实时通讯）; 写了 `matrix-bridge.ps1` 脚本作为手动桥接方案; 待验证：Client API 发送消息 [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0018.md:17-20]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0018.md:3:5 -->
+- Session: 2026-06-02 00:18:04 GMT+8: **Session Key**: agent:main:dashboard:537e8fe5-09e6-4c19-8f9b-b3bb39b13c31; **Session ID**: 2506a857-c2f3-46fa-b313-df859924139d; **Source**: webchat [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0018.md:3-5]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0018.md:9:12 -->
+- Conversation Summary: assistant: 指挥官批评得对。我查通讯日志，看看昨天记录了什么。 assistant: 找到了，昨天写过一个手动矩阵桥接脚本。继续翻昨天的通讯记录： assistant: 指挥官说得对，我一直在重复查同一个问题。昨天写的记录在哪里？让我直接看昨天的日志和通讯通道。 assistant: 找到了。昨天（5月31日）的学习日志显示了一个关键发现： [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0018.md:9-12]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0116.md:14:17 -->
+- Conversation Summary: | 项目 | 状态 | 详情 | |------|------|------| | **Gateway** | ✅ 在线 | 运行 2m 17s | | **Ollama** | ✅ 在线 | 6 个模型就绪 | [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0116.md:14-17]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0116.md:18:21 -->
+- Conversation Summary: | **主模型** | ✅ qwen3.6:latest | 23GB | | **CPU** | ✅ 正常 | 负载 20% | | **内存** | ✅ 充裕 | 52.2 / 64.9 GB (80.5% 空闲) | | **C盘** | ✅ 充足 | 625.5 GB 可用 (67.2%) | [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0116.md:18-21]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0116.md:22:24 -->
+- Conversation Summary: | **GPU 3090** | ✅ 正常 | 40°C，6.8W，空闲 | | **GPU 5070 Ti** | ✅ 正常 | 45°C，8.4W，空闲 | | **Cron** | ✅ 7 个任务 | 下次唤醒 00:59 | [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0116.md:22-24]
+
+## Promoted From Short-Term Memory (2026-06-08)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0018.md:22:22 -->
+- Conversation Summary: **当前问题：** [score=0.863 recalls=0 avg=0.620 source=memory/2026-06-02-0018.md:22-22]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-03.md:17:18 -->
+- 备用搜索方案: Ollama Web Search API (2025-09-26)：REST API + SDK + MCP Server，需 Ollama Cloud 账号，有免费额度; 当前主用：Brave Search API (TOOLS.md 已配置) [score=0.861 recalls=0 avg=0.620 source=memory/2026-06-03.md:17-18]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0116.md:26:29 -->
+- Conversation Summary: **结论：全部正常，无异常。** user: [Tue 2026-06-02 00:57 GMT+8] No command owner is configured. | | A command owner is the human operator account allowed to run owner-only commands and | | approve dangerous actions, including /diagnostics, /export-trajectory, /config, and exec | [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0116.md:26-29]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0116.md:3:5 -->
+- Session: 2026-06-02 01:16:12 GMT+8: **Session Key**: agent:main:dashboard:3c39c990-456d-43f8-9e8a-54454d09416c; **Session ID**: ec3146fa-aabb-4ecb-8632-1700dad96390; **Source**: webchat [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0116.md:3-5]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0116.md:9:10 -->
+- Conversation Summary: user: [Tue 2026-06-02 00:52 GMT+8] 检查系统健康状况 assistant: 系统健康检查完成 ✅ [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0116.md:9-10]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0219.md:17:20 -->
+- 📊 ANGEN-110 状态: | 项目 | 状态 | |------|------| | **Gateway** | ✅ 运行中（7 cron jobs） | | **Ollama** | ✅ `qwen3.6:latest` 加载，~29 min | [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0219.md:17-20]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0219.md:21:24 -->
+- 📊 ANGEN-110 状态: | **CPU** | 74% | | **内存** | 64GB (4×16GB DDR5 4800MHz) | | **C盘** | 625 GB / 930 GB（剩余 625 GB） | | **RTX 3090** | 17.8/24 GB，50°C，82W | [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0219.md:21-24]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0219.md:25:27 -->
+- 📊 ANGEN-110 状态: | **RTX 5070 Ti** | 11.6/16 GB，41°C，44W | | **B端 (192.168.31.18)** | ✅ ping <1ms，在线 | | **Z盘 (NAS)** | 挂载不可用（已知问题） | [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0219.md:25-27]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0219.md:29:29 -->
+- 📊 ANGEN-110 状态: B端机器在线、延迟正常，Z盘挂载确实是长期问题了，不是当前连接故障。 [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0219.md:29-29]
+<!-- openclaw-memory-promotion:memory:memory/2026-06-02-0219.md:3:5 -->
+- Session: 2026-06-02 02:19:02 GMT+8: **Session Key**: agent:main:dashboard:e01c9915-6258-4793-bc24-8b6e383ee192; **Session ID**: a244cd4f-22e6-4515-b7c0-e18b23c58cc7; **Source**: webchat [score=0.854 recalls=0 avg=0.620 source=memory/2026-06-02-0219.md:3-5]

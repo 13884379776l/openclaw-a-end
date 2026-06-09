@@ -1,0 +1,9 @@
+ubuntu@ubuntu-s:~$ # 请在 B 端运行
+mkdir -p ~/.openclaw && echo '{"adapterConfig": {"devicePrivateKeyPem": "-----BEGIN PRIVATE KEY-----\nMC4CAQAwBQYDK2VwBCIEII8UrvFiw4YIj6zFX0T5e8Poy3/30MjP9zSR4K6JHd1i\n-----END PRIVATE KEY-----"}}' > ~/.openclaw/openclaw.json
+ubuntu@ubuntu-s:~$ awk '{printf "%s\\n", $0}' ~/.openclaw/device.key && echo ""
+-----BEGIN PRIVATE KEY-----\nMC4CAQAwBQYDK2VwBCIEII8UrvFiw4YIj6zFX0T5e8Poy3/30MjP9zSR4K6JHd1i\n-----END PRIVATE KEY-----\n
+ubuntu@ubuntu-s:~$ cat ~/.openclaw/device.key
+-----BEGIN PRIVATE KEY-----
+MC4CAQAwBQYDK2VwBCIEII8UrvFiw4YIj6zFX0T5e8Poy3/30MjP9zSR4K6JHd1i
+-----END PRIVATE KEY-----
+ubuntu@ubuntu-s:~$
